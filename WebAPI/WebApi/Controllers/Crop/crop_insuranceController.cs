@@ -24,7 +24,7 @@ namespace WebApi.Controllers.Crop
         {
             return db.crop_insurance;
         }
-        //
+
         // GET: api/crop_insurance/5
         [ResponseType(typeof(crop_insurance))]
         public IHttpActionResult Getcrop_insurance(int id)
