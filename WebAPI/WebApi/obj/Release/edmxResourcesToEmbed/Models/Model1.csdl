@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FarmerSchemeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="crop">
+    <Key>
+      <PropertyRef Name="cropid" />
+    </Key>
+    <Property Name="cropid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cropname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="croptype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="crop_insurance" Relationship="Self.FK__crop_insu__cropi__49C3F6B7" FromRole="crop" ToRole="crop_insurance" />
+    <NavigationProperty Name="InsuranceAvails" Relationship="Self.FK__Insurance__cropi__4E88ABD4" FromRole="crop" ToRole="InsuranceAvail" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK__Stock__cropId__25869641" FromRole="crop" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="crop_insurance">
+    <Key>
+      <PropertyRef Name="cropid" />
+    </Key>
+    <Property Name="cropid" Type="Int32" Nullable="false" />
+    <Property Name="premium_percentage" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="insurance_validity" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="crop" Relationship="Self.FK__crop_insu__cropi__49C3F6B7" FromRole="crop_insurance" ToRole="crop" />
+  </EntityType>
+  <EntityType Name="exchange">
+    <Key>
+      <PropertyRef Name="StockId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="bid" Type="Int32" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK__exchange__StockI__286302EC" FromRole="exchange" ToRole="Stock" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__exchange__UserId__29572725" FromRole="exchange" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="history">
+    <Key>
+      <PropertyRef Name="transid" />
+    </Key>
+    <Property Name="transid" Type="Int32" Nullable="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="time" Type="Time" Precision="7" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="StockId" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="price" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK__history__StockId__2D27B809" FromRole="history" ToRole="Stock" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__history__UserID__2C3393D0" FromRole="history" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="InsuranceAvail">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="cropid" Type="Int32" />
+    <NavigationProperty Name="crop" Relationship="Self.FK__Insurance__cropi__4E88ABD4" FromRole="InsuranceAvail" ToRole="crop" />
+    <NavigationProperty Name="policyApplicant" Relationship="Self.FK__Insurance__Appli__4CA06362" FromRole="InsuranceAvail" ToRole="policyApplicants" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__Insurance__UserI__4D94879B" FromRole="InsuranceAvail" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="InsuranceClaim">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int32" Nullable="false" />
+    <Property Name="AppliedDate" Type="DateTime" Precision="0" />
+    <Property Name="ApplicationStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonForClaim" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="policyApplicant" Relationship="Self.FK__Insurance__Appli__35BCFE0A" FromRole="InsuranceClaim" ToRole="policyApplicants" />
+  </EntityType>
+  <EntityType Name="policyApplicant">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int32" Nullable="false" />
+    <Property Name="PolicyNo" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="InsuranceAvail" Relationship="Self.FK__Insurance__Appli__4CA06362" FromRole="policyApplicants" ToRole="InsuranceAvail" />
+    <NavigationProperty Name="InsuranceClaim" Relationship="Self.FK__Insurance__Appli__35BCFE0A" FromRole="policyApplicants" ToRole="InsuranceClaim" />
+    <NavigationProperty Name="PolicyDetail" Relationship="Self.FK__policyApp__Polic__31EC6D26" FromRole="policyApplicants" ToRole="PolicyDetails" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__policyApp__UserI__32E0915F" FromRole="policyApplicants" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="PolicyDetail">
+    <Key>
+      <PropertyRef Name="PolicyNo" />
+    </Key>
+    <Property Name="PolicyNo" Type="Int32" Nullable="false" />
+    <Property Name="SumInsured" Type="Int32" />
+    <Property Name="SumInsured_per_hectare" Type="Int32" />
+    <Property Name="Premium" Type="Int32" />
+    <Property Name="SharePremium" Type="Int32" />
+    <Property Name="Area" Type="Int32" />
+    <NavigationProperty Name="policyApplicants" Relationship="Self.FK__policyApp__Polic__31EC6D26" FromRole="PolicyDetails" ToRole="policyApplicants" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockId" />
+    </Key>
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="cropId" Type="Int32" />
+    <Property Name="Fertilizer" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="soilPH" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Selling_Price" Type="Int32" />
+    <NavigationProperty Name="crop" Relationship="Self.FK__Stock__cropId__25869641" FromRole="Stock" ToRole="crop" />
+    <NavigationProperty Name="exchanges" Relationship="Self.FK__exchange__StockI__286302EC" FromRole="Stock" ToRole="exchange" />
+    <NavigationProperty Name="histories" Relationship="Self.FK__history__StockId__2D27B809" FromRole="Stock" ToRole="history" />
+    <NavigationProperty Name="UserTable" Relationship="Self.FK__Stock__UserID__24927208" FromRole="Stock" ToRole="UserTable" />
+  </EntityType>
+  <EntityType Name="UserBankDetail">
+    <Key>
+      <PropertyRef Name="BankAccountNumber" />
+    </Key>
+    <Property Name="BankAccountNumber" Type="Int64" Nullable="false" />
+    <Property Name="IFSC_Code" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDocument">
+    <Key>
+      <PropertyRef Name="AadharNumber" />
+    </Key>
+    <Property Name="AadharNumber" Type="Int64" Nullable="false" />
+    <Property Name="AadharCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="PanNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PanCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="TraderCertificate" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FarmerLicense" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MobileNumber" Type="Int64" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Pincode" Type="Int32" Nullable="false" />
+    <Property Name="BankAccountNumber" Type="Int64" Nullable="false" />
+    <Property Name="AadharNumber" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="exchanges" Relationship="Self.FK__exchange__UserId__29572725" FromRole="UserTable" ToRole="exchange" />
+    <NavigationProperty Name="histories" Relationship="Self.FK__history__UserID__2C3393D0" FromRole="UserTable" ToRole="history" />
+    <NavigationProperty Name="InsuranceAvails" Relationship="Self.FK__Insurance__UserI__4D94879B" FromRole="UserTable" ToRole="InsuranceAvail" />
+    <NavigationProperty Name="policyApplicants" Relationship="Self.FK__policyApp__UserI__32E0915F" FromRole="UserTable" ToRole="policyApplicants" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK__Stock__UserID__24927208" FromRole="UserTable" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="TypeName" />
+    </Key>
+    <Property Name="TypeName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TypeCode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__crop_insu__cropi__49C3F6B7">
+    <End Role="crop" Type="Self.crop" Multiplicity="1" />
+    <End Role="crop_insurance" Type="Self.crop_insurance" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="crop">
+        <PropertyRef Name="cropid" />
+      </Principal>
+      <Dependent Role="crop_insurance">
+        <PropertyRef Name="cropid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insurance__cropi__4E88ABD4">
+    <End Role="crop" Type="Self.crop" Multiplicity="0..1" />
+    <End Role="InsuranceAvail" Type="Self.InsuranceAvail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="crop">
+        <PropertyRef Name="cropid" />
+      </Principal>
+      <Dependent Role="InsuranceAvail">
+        <PropertyRef Name="cropid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__cropId__25869641">
+    <End Role="crop" Type="Self.crop" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="crop">
+        <PropertyRef Name="cropid" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="cropId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__exchange__StockI__286302EC">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="exchange" Type="Self.exchange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockId" />
+      </Principal>
+      <Dependent Role="exchange">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__exchange__UserId__29572725">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="1" />
+    <End Role="exchange" Type="Self.exchange" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="exchange">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__history__StockId__2D27B809">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockId" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__history__UserID__2C3393D0">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="0..1" />
+    <End Role="history" Type="Self.history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="history">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insurance__Appli__4CA06362">
+    <End Role="policyApplicants" Type="Self.policyApplicant" Multiplicity="1" />
+    <End Role="InsuranceAvail" Type="Self.InsuranceAvail" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="policyApplicants">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="InsuranceAvail">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insurance__UserI__4D94879B">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="0..1" />
+    <End Role="InsuranceAvail" Type="Self.InsuranceAvail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="InsuranceAvail">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insurance__Appli__35BCFE0A">
+    <End Role="policyApplicants" Type="Self.policyApplicant" Multiplicity="1" />
+    <End Role="InsuranceClaim" Type="Self.InsuranceClaim" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="policyApplicants">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="InsuranceClaim">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__policyApp__Polic__31EC6D26">
+    <End Role="PolicyDetails" Type="Self.PolicyDetail" Multiplicity="0..1" />
+    <End Role="policyApplicants" Type="Self.policyApplicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyDetails">
+        <PropertyRef Name="PolicyNo" />
+      </Principal>
+      <Dependent Role="policyApplicants">
+        <PropertyRef Name="PolicyNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__policyApp__UserI__32E0915F">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="0..1" />
+    <End Role="policyApplicants" Type="Self.policyApplicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="policyApplicants">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Stock__UserID__24927208">
+    <End Role="UserTable" Type="Self.UserTable" Multiplicity="0..1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserTable">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FarmerSchemeEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="crops" EntityType="Self.crop" />
+    <EntitySet Name="crop_insurance" EntityType="Self.crop_insurance" />
+    <EntitySet Name="exchanges" EntityType="Self.exchange" />
+    <EntitySet Name="histories" EntityType="Self.history" />
+    <EntitySet Name="InsuranceAvails" EntityType="Self.InsuranceAvail" />
+    <EntitySet Name="InsuranceClaims" EntityType="Self.InsuranceClaim" />
+    <EntitySet Name="policyApplicants" EntityType="Self.policyApplicant" />
+    <EntitySet Name="PolicyDetails" EntityType="Self.PolicyDetail" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <EntitySet Name="UserBankDetails" EntityType="Self.UserBankDetail" />
+    <EntitySet Name="UserDocuments" EntityType="Self.UserDocument" />
+    <EntitySet Name="UserTables" EntityType="Self.UserTable" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="FK__crop_insu__cropi__49C3F6B7" Association="Self.FK__crop_insu__cropi__49C3F6B7">
+      <End Role="crop" EntitySet="crops" />
+      <End Role="crop_insurance" EntitySet="crop_insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insurance__cropi__4E88ABD4" Association="Self.FK__Insurance__cropi__4E88ABD4">
+      <End Role="crop" EntitySet="crops" />
+      <End Role="InsuranceAvail" EntitySet="InsuranceAvails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__cropId__25869641" Association="Self.FK__Stock__cropId__25869641">
+      <End Role="crop" EntitySet="crops" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__exchange__StockI__286302EC" Association="Self.FK__exchange__StockI__286302EC">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="exchange" EntitySet="exchanges" />
+    </AssociationSet>
+    <AssociationSet Name="FK__exchange__UserId__29572725" Association="Self.FK__exchange__UserId__29572725">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="exchange" EntitySet="exchanges" />
+    </AssociationSet>
+    <AssociationSet Name="FK__history__StockId__2D27B809" Association="Self.FK__history__StockId__2D27B809">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="history" EntitySet="histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__history__UserID__2C3393D0" Association="Self.FK__history__UserID__2C3393D0">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="history" EntitySet="histories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insurance__Appli__4CA06362" Association="Self.FK__Insurance__Appli__4CA06362">
+      <End Role="policyApplicants" EntitySet="policyApplicants" />
+      <End Role="InsuranceAvail" EntitySet="InsuranceAvails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insurance__UserI__4D94879B" Association="Self.FK__Insurance__UserI__4D94879B">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="InsuranceAvail" EntitySet="InsuranceAvails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insurance__Appli__35BCFE0A" Association="Self.FK__Insurance__Appli__35BCFE0A">
+      <End Role="policyApplicants" EntitySet="policyApplicants" />
+      <End Role="InsuranceClaim" EntitySet="InsuranceClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK__policyApp__Polic__31EC6D26" Association="Self.FK__policyApp__Polic__31EC6D26">
+      <End Role="PolicyDetails" EntitySet="PolicyDetails" />
+      <End Role="policyApplicants" EntitySet="policyApplicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK__policyApp__UserI__32E0915F" Association="Self.FK__policyApp__UserI__32E0915F">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="policyApplicants" EntitySet="policyApplicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Stock__UserID__24927208" Association="Self.FK__Stock__UserID__24927208">
+      <End Role="UserTable" EntitySet="UserTables" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
