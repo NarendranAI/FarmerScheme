@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Farmer_SchemeModelStoreContainer" CdmEntityContainer="Farmer_SchemeEntities">
+    <EntitySetMapping Name="crops">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.crop">
+        <MappingFragment StoreEntitySet="crop">
+          <ScalarProperty Name="cropid" ColumnName="cropid" />
+          <ScalarProperty Name="cropname" ColumnName="cropname" />
+          <ScalarProperty Name="croptype" ColumnName="croptype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="crop_insurance">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.crop_insurance">
+        <MappingFragment StoreEntitySet="crop_insurance">
+          <ScalarProperty Name="croptype" ColumnName="croptype" />
+          <ScalarProperty Name="premium_percentage" ColumnName="premium_percentage" />
+          <ScalarProperty Name="insurance_validity" ColumnName="insurance_validity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="exchanges">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.exchange">
+        <MappingFragment StoreEntitySet="exchange">
+          <ScalarProperty Name="StockId" ColumnName="StockId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="bid" ColumnName="bid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="histories">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.history">
+        <MappingFragment StoreEntitySet="history">
+          <ScalarProperty Name="transid" ColumnName="transid" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StockId" ColumnName="StockId" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceClaims">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.InsuranceClaim">
+        <MappingFragment StoreEntitySet="InsuranceClaim">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="AppliedDate" ColumnName="AppliedDate" />
+          <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+          <ScalarProperty Name="ReasonForClaim" ColumnName="ReasonForClaim" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="policyApplicants">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.policyApplicant">
+        <MappingFragment StoreEntitySet="policyApplicants">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyDetails">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.PolicyDetail">
+        <MappingFragment StoreEntitySet="PolicyDetails">
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="SumInsured" ColumnName="SumInsured" />
+          <ScalarProperty Name="SumInsured_per_hectare" ColumnName="SumInsured_per_hectare" />
+          <ScalarProperty Name="Premium" ColumnName="Premium" />
+          <ScalarProperty Name="SharePremium" ColumnName="SharePremium" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="StockId" ColumnName="StockId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="cropId" ColumnName="cropId" />
+          <ScalarProperty Name="Fertilizer" ColumnName="Fertilizer" />
+          <ScalarProperty Name="soilPH" ColumnName="soilPH" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Selling_Price" ColumnName="Selling_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBankDetails">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.UserBankDetail">
+        <MappingFragment StoreEntitySet="UserBankDetails">
+          <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDocuments">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.UserDocument">
+        <MappingFragment StoreEntitySet="UserDocuments">
+          <ScalarProperty Name="AadharNumber" ColumnName="AadharNumber" />
+          <ScalarProperty Name="AadharCard" ColumnName="AadharCard" />
+          <ScalarProperty Name="PanNumber" ColumnName="PanNumber" />
+          <ScalarProperty Name="PanCard" ColumnName="PanCard" />
+          <ScalarProperty Name="TraderCertificate" ColumnName="TraderCertificate" />
+          <ScalarProperty Name="FarmerLicense" ColumnName="FarmerLicense" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTables">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+          <ScalarProperty Name="AadharNumber" ColumnName="AadharNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceAvails">
+      <EntityTypeMapping TypeName="Farmer_SchemeModel.InsuranceAvail">
+        <MappingFragment StoreEntitySet="InsuranceAvail">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="cropid" ColumnName="cropid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
