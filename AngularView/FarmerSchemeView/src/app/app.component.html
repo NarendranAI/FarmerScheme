@@ -46,5 +46,52 @@
         </nav>
         
         
+<<<<<<< HEAD
         <!-- <crop-insurance></crop-insurance>  -->
 </div>
+=======
+</div>
+
+<div>
+    <br>
+  <table style="width: 80%; margin: auto;">
+      <tr>
+          <td style="width: 25%;">
+        <div class="container" (mouseover)="image1toggle()" (mouseout)="image1toggle()">
+            <img [class.bg-img]="image1" src="../assets/farmer2.jpg" width="250px" height="300px" />
+            <p class="centered" [hidden]="!image1" >Farmers Corner</p>
+            <p class="short" [hidden]="image1">To apply for insurance</p>
+            <p>Farmer Corner</p>
+
+        </div>
+        </td>
+          <td style="width: 25%;">
+            <div class="container" (mouseover)="image2toggle()" (mouseout)="image2toggle()">
+                <img [class.bg-img]="image2" src="../assets/rupee_bg.jpg" width="250px" height="300px" />
+                <p class="centered" [hidden]="!image2">Insurance Calculator</p>
+                <p class="short" [hidden]="image2">To calculate insurance</p>
+                <p>Calculate</p>
+            </div>        
+        </td>
+          <td style="width: 25%;">
+            <div class="container" (mouseover)="image3toggle()" (mouseout)="image3toggle()">
+                <img [class.bg-img]="image3" src="../assets/sad_crop.jpg" width="250px" height="300px" />
+                <p class="centered" [hidden]="!image3">Report Crop Loss</p>
+                <p class="short" [hidden]="image3">To claim the insurance</p>
+                <p>Crop loss report</p>
+            </div>
+        </td>
+          <td style="width: 25%;">
+            <div class="container" (mouseover)="image4toggle()" (mouseout)="image4toggle()">
+                <img [class.bg-img]="image4" src="../assets/tesseract_ocr.png" width="250px" height="300px" />
+                <p class="centered" [hidden]="!image4">Application Status</p>
+                <p class="short" [hidden]="image4">To know application status</p>
+                <p>Application Status</p>
+            </div>
+        </td>
+      </tr>
+  </table>
+
+</div>
+<footer>Copyright Teams 16 2020</footer>
+>>>>>>> 222cb16fe5e283d1b6f72d1cfb38f984d9497bd4

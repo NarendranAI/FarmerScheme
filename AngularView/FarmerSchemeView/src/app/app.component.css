@@ -60,3 +60,36 @@ h1
 {
     text-transform: capitalize;
 }
+.container
+{
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: large;
+  position: relative;
+  cursor:default;
+}
+.container :hover
+{
+    zoom: 1.1;
+}
+.container .centered
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.bg-img
+{
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+.short
+{
+    font-size: smaller;
+    font-family: cursive;
+
+}
