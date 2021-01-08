@@ -1,0 +1,62 @@
+nav
+{   background-image: linear-gradient(to right,green,greenyellow);
+    border: 0.5px solid greenyellow;
+    padding:20px;
+    padding-bottom: 5px;
+}
+nav ul li
+{
+    display: inline;
+    text-align: center;
+    padding-left: 20px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: floralwhite;
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+nav ul li a:hover
+{
+    zoom: 1.3;
+    padding: 0px;
+}
+nav ul li button
+{
+    
+    display: inline-block;
+    border-radius: 5px;
+    width: 2cm;
+    padding: 3px;
+}
+.btn-custom
+{
+    background-color: rgba(0, 100, 0, 0.87);
+    color: white;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn-custom:hover,.btn-custom:active
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+}
+
+.title_card
+{
+    background-color: white;
+    height: 2.5cm;
+    width: 100%;
+    border: 1px solid black;
+}
+.yojana_logo
+{
+    margin-left: 0.5cm;
+}
+
+h1
+{
+    text-transform: capitalize;
+}

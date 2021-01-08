@@ -1,1 +1,6 @@
-@import "./assets/bootstrap-lux.css";
+@import './assets/bootstrap-lux.css';
+
+body
+{
+    background-image: url('./assets/Assets.jpg');  
+}
