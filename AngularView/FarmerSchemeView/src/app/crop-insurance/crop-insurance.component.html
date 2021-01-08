@@ -1,0 +1,19 @@
+
+
+<table class="table" style="text-align: center;">
+    <thead class="table thead-dark">
+        <tr>
+            <th>Crop Type</th>
+            <th>Premium Percentage</th>
+        </tr>
+        
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let x of CropTypeList">
+            <td>{{x['croptype'] | uppercase}}</td>
+            <td>{{x['premium_percentage']}}</td>
+            
+        </tr>
+    </tbody>
+</table>

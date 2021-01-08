@@ -7,6 +7,8 @@ soilPH varbinary(max),
 Quantity int,
 Selling_Price int
 );
+
+
 create table exchange 
 (
 StockId int foreign key references Stock(StockId),
@@ -14,6 +16,7 @@ UserId int foreign key references UserTable(UserId),
 bid int ,
 primary key(StockId,UserId)
 );
+
 
 create table history
 (
@@ -27,3 +30,4 @@ price int ,
 status varchar,
 comment varchar
 );
+

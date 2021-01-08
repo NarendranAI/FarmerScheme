@@ -24,5 +24,6 @@ primary key(ApplicationId )
 create table InsuranceAvail(
 ApplicationId int foreign key references PolicyApplicants(ApplicationId),
 UserID int foreign key references UserTable(UserId),
-cropid int FOREIGN KEY REFERENCES crop(cropid),
+cropid int FOREIGN KEY REFERENCES crop(cropid) not null,
  );
+
