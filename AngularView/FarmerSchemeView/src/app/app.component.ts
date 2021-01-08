@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FarmerSchemeView';
+  flag=false;
+  public somefn()
+  {
+    this.flag!=this.flag;
+  }
 }

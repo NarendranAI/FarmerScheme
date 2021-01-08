@@ -1,3 +1,4 @@
+
 create table UserType
 (
 TypeName varchar(10) Primary Key,
