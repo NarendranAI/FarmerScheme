@@ -1,0 +1,18 @@
+rice
+maize
+millet
+soyabean
+cotton
+sorghum
+bajra
+groundnut
+ragi
+jowar
+mirch
+sugarcane
+watermelon
+muskmelon
+sesame
+bitterguard
+bottle guard
+turmeric 
