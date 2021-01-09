@@ -1,1 +1,77 @@
-<p>farmer-registration works!</p>
+<nav-bar></nav-bar>
+<form #f="ngForm" (ngSubmit)="submit(data)">
+    <div class="form-group">
+        <label for="Id">User Id</label>
+        <input type="text" name="Id" id="Id" [(ngModel)]='data.UserId' #userId="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Name">User Name</label>
+        <input type="text" name="Name" id="Name" [(ngModel)]='data.UserName' #userName="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="name">Email</label>
+        <input type="text" name="Email" id="Email" [(ngModel)]='data.Email' #userEmail="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Number">Mobile Number</label>
+        <input type="text" name="Number" id="Number" [(ngModel)]='data.MobileNumber' #userNumber="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" name="Password" id="Password" ngModel #userPassword="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input type="text" name="Address" id="Address" ngModel #userAddress="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" name="City" id="City" ngModel #userCity="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Pincode">Pincode</label>
+        <input type="text" name="Pincode" id="Pincode" ngModel #userPincode="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="BankAccountNumber">Bank Account Number</label>
+        <input type="text" name="BankAccountNumber" id="BankAccountNumber" ngModel #userBankAccountNumber="ngModel" class="form-control">
+    </div>
+   
+    <div class="form-group">
+        <label for="IfscCode">Ifsc Code</label>
+        <input type="text" name="IfscCode" id="IfscCode" ngModel #userIfscCode="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="AadharNumber">Aadhar Number</label>
+        <input type="text" name="AadharNumber" id="AadharNumber" ngModel #userAadharNumber="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="AadharDocument">Aadhar Document</label>
+        <input type="file" name="AadharDocument" id="AadharDocument" ngModel #userAadharDocument="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="AadharDocument">Aadhar Document</label>
+        <input type="file" name="AadharDocument" id="AadharDocument" ngModel #userAadharDocument="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="PanNumber">Pan Number</label>
+        <input type="file" name="PanNumber" id="PanNumber" ngModel #userPanNumber="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="PanCard">Pan Card</label>
+        <input type="file" name="PanCard" id="PanCard" ngModel #userPanCard="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="TraderCertificate">Trader Certificate</label>
+        <input type="file" name="TraderCertificate" id="TraderCertificate" ngModel #userTraderCertificate="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="FarmerLicense">Farmer License</label>
+        <input type="file" name="FarmerLicense" id="FarmerLicense" ngModel #userFarmerLicense="ngModel" class="form-control">
+    </div>
+
+
+
+
+   
+</form>
