@@ -1,0 +1,191 @@
+nav
+{   background-image: linear-gradient(to right,green,greenyellow);
+    border: 0.5px solid greenyellow;
+    padding:20px;
+    padding-bottom: 5px;
+}
+nav ul li
+{
+    display: inline;
+    text-align: center;
+    padding-left: 20px;
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: floralwhite;
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+
+nav ul li a:hover
+{
+    zoom: 1.3;
+    padding: 0px;
+}
+nav ul li button
+{
+    
+    display: inline-block;
+    border-radius: 5px;
+    width: 2cm;
+    padding: 3px;
+}
+.btn-custom
+{
+    background-color: rgba(0, 100, 0, 0.87);
+    color: white;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.btn-custom:hover,.btn-custom:active
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+
+}
+
+.btn-dropdown
+{
+    width: 2.5cm;
+    height: 0.8cm;
+    padding: 3px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    box-shadow:1px 1px  #000000;
+    text-align: center;
+
+}
+.btn-dropdown:hover
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+}
+
+.title_card
+{
+    background-color: white;
+    height: 2.5cm;
+    width: 100%;
+    border: 1px solid black;
+}
+.yojana_logo
+{
+    margin-left: 0.5cm;
+}
+
+h1
+{
+    text-transform: capitalize;
+}
+.container
+{
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: large;
+  position: relative;
+  cursor:default;
+
+}
+
+
+
+.container .centered
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 1px 1px yellow;
+    font-weight: bolder;
+    font-size: larger;
+}
+.bg-img
+{
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+.short
+{
+    font-size: smaller;
+    font-family: cursive;
+
+ }
+ /*
+.dropdown{
+    border:1px solid black;
+    background-color:#f0f0f0;
+    color:blue;
+    height: 0.8cm;
+
+}
+.dropdown:hover{
+    background-color: white;
+    text-shadow: 1px 1px yellow;
+  
+    display: block;
+
+} */
+
+
+
+
+
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color:black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1;
+ 
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  
+    display: block;
+
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+

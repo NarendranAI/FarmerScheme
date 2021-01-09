@@ -14,6 +14,8 @@ import { InsuranceClaimComponent } from './insurance-claim/insurance-claim.compo
 import { CalculatePremiumComponent } from './calculate-premium/calculate-premium.component';
 import { ApplicationStatusComponent } from './application-status/application-status.component';
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
+import { AboutComponent } from './about/about.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { FarmerRegistrationComponent } from './farmer-registration/farmer-regist
     InsuranceClaimComponent,
     CalculatePremiumComponent,
     ApplicationStatusComponent,
-    FarmerRegistrationComponent
+    FarmerRegistrationComponent,
+    AboutComponent,
+    NavBarComponent
   ],
   imports: [
   BrowserModule,

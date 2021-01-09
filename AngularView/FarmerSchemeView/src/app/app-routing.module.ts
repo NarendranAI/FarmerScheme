@@ -10,6 +10,7 @@ import {InsuranceClaimComponent} from './insurance-claim/insurance-claim.compone
 import { CalculatePremiumComponent} from './calculate-premium/calculate-premium.component';
 import {ApplicationStatusComponent} from './application-status/application-status.component';
 
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'InsuranceClaim',component:InsuranceClaimComponent},
   {path:'CalculatePremium',component:CalculatePremiumComponent},
   {path:'ApplicationStatus',component:ApplicationStatusComponent},
+  {path:'About',component:AboutComponent},
   {path:'**',component:NotFoundComponent}
   ];
 
