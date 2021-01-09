@@ -11,6 +11,9 @@ namespace WebAPI
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configuration.Formatters.Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }

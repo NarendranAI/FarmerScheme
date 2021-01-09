@@ -6,6 +6,7 @@ TypeCode varchar(1) unique not null
 )
 
 
+
 create table UserTable
 (
 UserID int not null Primary Key,
@@ -18,7 +19,10 @@ Address varchar(100) not null,
 City varchar(20) not null,
 Pincode int not null,
 BankAccountNumber bigint not null unique,
-AadharNumber bigint not null unique
+AadharNumber bigint not null unique,
+LandAddress varchar(100),
+LandCity varchar(20),
+LandPinCode int
 )
 create Table UserBankDetails
 (

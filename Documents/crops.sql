@@ -1,5 +1,4 @@
 
-
 create table crop_insurance
 (
 croptype varchar(20) primary key,
@@ -18,4 +17,3 @@ insert into crop_insurance values('annual commercial',5,null)
 insert into crop_insurance values('kharif',2,null)
 insert into crop_insurance values('horticultural',5,null)
 insert into crop_insurance values('rabi',1.5,null)
-select * from crop_insurance
