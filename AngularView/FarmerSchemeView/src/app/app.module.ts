@@ -7,13 +7,17 @@ import { SQLServerService } from './services/SQLServer.service';
 import { CropInsuranceComponent } from './crop-insurance/crop-insurance.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AboutComponent } from './about/about.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CropInsuranceComponent,
     HomePageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent,
+    NavBarComponent
   ],
   imports: [
   BrowserModule,

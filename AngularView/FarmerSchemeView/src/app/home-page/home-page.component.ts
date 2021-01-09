@@ -8,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   constructor() { }
-  flag=false;
-  public somefn()
-  {
-    this.flag=!this.flag;
-  }
+  
   image1=false;
   public image1toggle()
   {
