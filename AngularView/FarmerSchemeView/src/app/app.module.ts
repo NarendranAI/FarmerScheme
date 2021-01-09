@@ -7,13 +7,28 @@ import { SQLServerService } from './services/SQLServer.service';
 import { CropInsuranceComponent } from './crop-insurance/crop-insurance.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { TraderRegistrationComponent } from './trader-registration/trader-registration.component';
+import { InsuranceAvailComponent } from './insurance-avail/insurance-avail.component';
+import { InsuranceClaimComponent } from './insurance-claim/insurance-claim.component';
+import { CalculatePremiumComponent } from './calculate-premium/calculate-premium.component';
+import { ApplicationStatusComponent } from './application-status/application-status.component';
+import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CropInsuranceComponent,
     HomePageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent,
+   
+    TraderRegistrationComponent,
+    InsuranceAvailComponent,
+    InsuranceClaimComponent,
+    CalculatePremiumComponent,
+    ApplicationStatusComponent,
+    FarmerRegistrationComponent
   ],
   imports: [
   BrowserModule,
