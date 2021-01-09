@@ -1,2 +1,0 @@
-Web.config merge=ours
-Backend/WebAPI/WebAPI/Web.config merge=ours
