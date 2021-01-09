@@ -11,6 +11,7 @@ import { CalculatePremiumComponent} from './calculate-premium/calculate-premium.
 import {ApplicationStatusComponent} from './application-status/application-status.component';
 
 import { AboutComponent } from './about/about.component';
+import { FarmerPageComponent } from './farmer-page/farmer-page.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'Home',pathMatch:'full'},

@@ -16,6 +16,7 @@ import { ApplicationStatusComponent } from './application-status/application-sta
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
 import { AboutComponent } from './about/about.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FarmerPageComponent } from './farmer-page/farmer-page.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ApplicationStatusComponent,
     FarmerRegistrationComponent,
     AboutComponent,
-    NavBarComponent
+    NavBarComponent,
+    FarmerPageComponent
   ],
   imports: [
   BrowserModule,
