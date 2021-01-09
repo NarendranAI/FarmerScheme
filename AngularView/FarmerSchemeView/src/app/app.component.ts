@@ -11,9 +11,6 @@ export class AppComponent {
   flag=false;
   public somefn()
   {
-<<<<<<< HEAD
-    this.flag!=this.flag;
-=======
     this.flag=!this.flag;
   }
   image1=false;
@@ -35,6 +32,5 @@ export class AppComponent {
   public image4toggle()
   {
     this.image4=!this.image4;
->>>>>>> 222cb16fe5e283d1b6f72d1cfb38f984d9497bd4
   }
 }
