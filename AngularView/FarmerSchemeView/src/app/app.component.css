@@ -70,17 +70,20 @@ h1
   font-size: large;
   position: relative;
   cursor:default;
+
 }
-.container :hover
-{
-    zoom: 1.1;
-}
+
+
+
 .container .centered
 {
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    text-shadow: 1px 1px yellow;
+    font-weight: bolder;
+    font-size: larger;
 }
 .bg-img
 {
