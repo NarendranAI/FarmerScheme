@@ -45,12 +45,16 @@ export class SQLServerService
         return count;
     }
     
-    getUserTable()
-    {}
+    getUserTable(id:number)
+    {
+        return this.http.get<IUserTables>(this.root_url+this.users_controller_urls[2]+'GetUserTable'+id,this.httpOptions)
+    }
     putUserTable()
     {}
-    deleteUserTable()
-    {}
+    deleteUserTable(id:number)
+    {
+        this.http.delete(this.root_url+this.users_controller_urls[2]+'DeleteUserTable'+id,this.httpOptions)
+    }
     postUserTable(val:IUserTables)
     {
         console.log(val)

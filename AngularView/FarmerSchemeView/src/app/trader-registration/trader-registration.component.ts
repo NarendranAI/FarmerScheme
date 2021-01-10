@@ -32,6 +32,12 @@ export class TraderRegistrationComponent implements OnInit {
 
 
   constructor(private service:SQLServerService,private router:Router) { }
+
+  public GoHome()
+  {
+    this.router.navigateByUrl("/Home");
+  }
+
   public Log(x)
   {console.log(x); }
 
@@ -67,14 +73,12 @@ this.service.postUserTable(this.UT);
   }
 
   ngOnInit(): void {
-  let x = this.service.getUserTableCount();
-  if(typeof x ==='undefined')
-  {
-    this.UT.UserID=1;
-  }
-  else{
-    this.UT.UserID=x+1;
-  }
+  let x = this.service.getAllUserTable().subscribe(
+    data=>{
+      this.UT.UserID=data.length+1; console.log(data.length+1);
+    }
+  );
+  
 
     }
 
