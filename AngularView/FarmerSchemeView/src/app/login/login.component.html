@@ -1,5 +1,5 @@
 <div class="container">
-    <div>
+    <div style="background-color: thistle;">
         <p style="text-align: center; font-size:xx-large; font-weight: bold; color: black;">Login Form</p>
     </div>
     <br>
@@ -10,7 +10,7 @@
             <input style="width:50%" type="text" class="form-control" id="email" 
              required 
              ngModel name="email" #email="ngModel">
-             <div class="alert alert-danger" *ngIf="email.touched &&!email.valid">
+             <div class="alert alert-danger" *ngIf="email.touched &&!email.valid" style="width:50%">
                 Email is required
              </div>
         </div>
@@ -19,7 +19,7 @@
             <input style="width:50%" type="password" class="form-control" id="password" 
              required 
              ngModel name="password" #password="ngModel">
-             <div class="alert alert-danger" *ngIf="password.touched &&!password.valid">
+             <div class="alert alert-danger" *ngIf="password.touched &&!password.valid" style="width:50%">
                 Password is required
              </div>
         </div>
