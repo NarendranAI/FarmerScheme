@@ -17,10 +17,12 @@ nav ul li a
     font-weight: bolder;
     font-size: larger;
     text-shadow: 1px 1px black;
+    
 }
 
 nav ul li a:hover
 {
+    
     zoom: 1.3;
     padding: 0px;
 }

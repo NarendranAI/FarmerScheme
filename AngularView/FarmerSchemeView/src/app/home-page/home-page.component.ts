@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'home-page',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
   
   image1=false;
   public image1toggle()
@@ -28,6 +29,22 @@ export class HomePageComponent implements OnInit {
   public image4toggle()
   {
     this.image4=!this.image4;
+  }
+  Imageclick()
+  {
+    this.router.navigate(['/InsuranceClaim']);
+  }
+  Imageclick1()
+  {
+    this.router.navigate(['/InsuranceAvail']);
+  }
+  Imageclick2()
+  {
+    this.router.navigate(['/ApplicationStatus']);
+  }
+  Imageclick3()
+  {
+    this.router.navigate(['/CalculatePremium']);
   }
 
   ngOnInit(): void {

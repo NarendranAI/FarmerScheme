@@ -1,1 +1,58 @@
-<p>calculate-premium works!</p>
+<div class="entire">
+    <form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
+        <div class="form-group">
+            <label for="Season">Season</label>
+            <input  required type="text" class="form-control" ngModel name="Season" id="Season"   #Season="ngModel" >
+           <span *ngIf="Season.touched && Season.error.required">Season Required</span>
+        </div>
+        <div class="form-group">
+            <label for="Year">Year</label>
+            <input type="text" name="Year" id="Year" ngModel #Year="ngModel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Crop">Crop</label>
+            <input type="text" name="Crop" id="Crop" ngModel #Crop="ngModel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Crop">Policy No</label>
+            <input type="text" name="PolicyNo" id="PolicyNo" ngModel #PolicyNo="ngModel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Area">Area</label>
+            <input type="text" name="Area" id="Area" ngModel #Area="ngModel" class="form-control">
+        </div>
+       
+        <div class="form-group">
+            <button class="btn-custom"  (click)="calculate()">Calculate</button>
+            <button class="btn-custom" (click)="calculate()"><a routerLink="">Reset</a></button>
+        </div >
+        <div *ngIf="flag">
+            <table class="table">
+            <tr class="thead-dark">
+                <th>Insurance Company</th>
+                <th>Area</th>
+                <th>Crop</th>
+                <th>Sum Insured</th>
+                <th>Sum Insured per hectare</th>
+                <th>premium amount for farmers</th>
+                <th>Premium amount from government</th>
+            </tr>
+            <tr class="thead-light">
+                <td>Fasal Bima Yojana</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                
+
+            </tr>
+        </table>
+
+        </div>
+       
+    </form>
+    </div>
+    
+

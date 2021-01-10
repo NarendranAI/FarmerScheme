@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-farmer-registration',
@@ -7,16 +8,21 @@ import { FormsModule} from '@angular/forms';
   styleUrls: ['./farmer-registration.component.css']
 })
 export class FarmerRegistrationComponent implements OnInit {
- data :{UserId:number;
+ data :{
 UserName:string;
 Email:string;
-MobileNumber:string}
-  constructor() { }
- submit(data)
- {
-   this.data=data;
-   console.log(data);
- }
+MobileNumber:string
+Address:string
+City:string
+Pincode:string
+BankAccountNumber:string
+}
+  constructor(private router:Router) { }
+  submit()
+  {
+    this.router.navigate(['/Login']);
+  }
+
   ngOnInit(): void {
   }
 

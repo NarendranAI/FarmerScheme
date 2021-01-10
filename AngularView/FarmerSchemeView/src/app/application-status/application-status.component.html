@@ -1,1 +1,18 @@
-<p>application-status works!</p>
+<div class="entire">
+    <form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
+        <div class="form-group">
+            <label for="ApplicationId">Application ID</label>
+            <input  required type="text" class="form-control" ngModel name="ApplicationId" id="ApplicationId"   #Season="ngModel" >
+           <span *ngIf="Season.touched && Season.error.required">Application ID Required</span>
+        </div>
+         
+        <div class="form-group">
+            <button class="btn-custom" ><a routerLink="">Check Status</a></button>
+            
+    
+        </div>
+       
+    </form>
+    </div>
+    
+    

@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="entire">
+    <form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
+<div class="form-group">
+    <label for="Email">Email</label>
+    <input type="text" name="Email" id="Email" ngModel #userEmail="ngModel" class="form-control">
+</div>
+<div class="form-group">
+    <label for="Password">Password</label>
+    <input type="text" name="Password" id="Password" ngModel #userPassword="ngModel" class="form-control">
+   </div>
+   <button class="btn-custom" (click)="submit2()">Login</button>
+   <br/>
+   <br/>
+
+   <div>New Register?</div><br/>
+   <button (click)="submit()" class="btn-custom">Farmer</button>
+   <button (click)="submit1()" class="btn-custom">Bidder</button>
+    </form>
+    </div>

@@ -1,25 +1,23 @@
-<nav-bar></nav-bar>
-<form #f="ngForm" (ngSubmit)="submit(data)">
+<div class="entire">
+<form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
     <div class="form-group">
         <label for="Id">User Id</label>
-        <input type="text" name="Id" id="Id" [(ngModel)]='data.UserId' #userId="ngModel" class="form-control">
+        <input  required type="text" class="form-control" ngModel name="Id" id="Id"   #Id="ngModel" >
+       <span *ngIf="Id.touched && Id.error.required">User Id Required</span>
     </div>
     <div class="form-group">
         <label for="Name">User Name</label>
-        <input type="text" name="Name" id="Name" [(ngModel)]='data.UserName' #userName="ngModel" class="form-control">
+        <input type="text" name="Name" id="Name" ngModel #userName="ngModel" class="form-control">
     </div>
     <div class="form-group">
-        <label for="name">Email</label>
-        <input type="text" name="Email" id="Email" [(ngModel)]='data.Email' #userEmail="ngModel" class="form-control">
+        <label for="Email">Email</label>
+        <input type="text" name="Email" id="Email" ngModel #userEmail="ngModel" class="form-control">
     </div>
     <div class="form-group">
         <label for="Number">Mobile Number</label>
-        <input type="text" name="Number" id="Number" [(ngModel)]='data.MobileNumber' #userNumber="ngModel" class="form-control">
+        <input type="text" name="Number" id="Number" ngModel #userNumber="ngModel" class="form-control">
     </div>
-    <div class="form-group">
-        <label for="Password">Password</label>
-        <input type="text" name="Password" id="Password" ngModel #userPassword="ngModel" class="form-control">
-    </div>
+    
     <div class="form-group">
         <label for="Address">Address</label>
         <input type="text" name="Address" id="Address" ngModel #userAddress="ngModel" class="form-control">
@@ -49,13 +47,10 @@
         <label for="AadharDocument">Aadhar Document</label>
         <input type="file" name="AadharDocument" id="AadharDocument" ngModel #userAadharDocument="ngModel" class="form-control">
     </div>
-    <div class="form-group">
-        <label for="AadharDocument">Aadhar Document</label>
-        <input type="file" name="AadharDocument" id="AadharDocument" ngModel #userAadharDocument="ngModel" class="form-control">
-    </div>
+    
     <div class="form-group">
         <label for="PanNumber">Pan Number</label>
-        <input type="file" name="PanNumber" id="PanNumber" ngModel #userPanNumber="ngModel" class="form-control">
+        <input type="text" name="PanNumber" id="PanNumber" ngModel #userPanNumber="ngModel" class="form-control">
     </div>
     <div class="form-group">
         <label for="PanCard">Pan Card</label>
@@ -69,9 +64,21 @@
         <label for="FarmerLicense">Farmer License</label>
         <input type="file" name="FarmerLicense" id="FarmerLicense" ngModel #userFarmerLicense="ngModel" class="form-control">
     </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" name="Password" id="Password" ngModel #userPassword="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Password">Confirm Password</label>
+        <input type="text" name="cnfrmPassword" id="cnfrmPassword" ngModel #usercnfrmPassword="ngModel" class="form-control">
+    </div>
+    <div class="form-group">
+        <button class="btn-custom">Register</button>
+        <button class="btn-custom">Reset</button>
+        <button class="btn-custom" (click)="submit()">Back</button>
+        
 
-
-
-
+    </div>
    
 </form>
+</div>

@@ -1,1 +1,34 @@
-<p>insurance-claim works!</p>
+<div class="entire">
+    <form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
+        <div class="form-group">
+            <label for="policyNumber">Policy Number</label>
+            <input  required type="text" class="form-control" ngModel name="policyNumber" id="policyNumber"   #policyNumber="ngModel" >
+           <span *ngIf="policyNumber.touched && policyNumber.error.required">policyNumber Required</span>
+        </div>
+        <div class="form-group">
+            <label for="Sum Insured">Sum Insured</label>
+            <input type="text" name="Sum Insured" id="Sum Insured" ngModel #SumInsured="ngModel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="NameOfInsuree">Name of Insuree</label>
+            <input type="text" name="NameOfInsuree" id="NameOfInsuree" ngModel #NameOfInsuree="ngModel" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="DateOfLoss">Date of Loss</label>
+            <input type="text" name="DateOfLoss" id="DateOfLoss" ngModel #DateOfLoss="ngModel" class="form-control">
+        </div>
+        
+        <div class="form-group">
+            <label for="CauseOfLoss">Cause of Loss</label>
+            <input type="text" name="CauseOfLoss" id="CauseOfLoss" ngModel #CauseOfLoss="ngModel" class="form-control">
+        </div>
+       
+        <div class="form-group">
+            <button class="btn-custom" ><a routerLink="">Submit</a></button>
+            
+    
+        </div>
+       
+    </form>
+    </div>
+    

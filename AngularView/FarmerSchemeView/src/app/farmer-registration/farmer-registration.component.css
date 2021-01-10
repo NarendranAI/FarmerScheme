@@ -1,0 +1,32 @@
+
+.btn-custom
+{
+    background-color: rgba(102, 173, 173, 0.726);
+    color:black;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 2cm;
+  
+}
+
+.btn-custom:hover,.btn-custom:active
+{
+    background-color:  rgba(102, 173, 173, 0.726);
+
+}
+.btn-custom a{
+    color:black;
+    text-decoration: none;
+}
+.form-custom
+{
+    margin:0cm 5cm -1cm 5cm;
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+}
+.entire
+{
+    position: relative;
+    top:0cm;bottom: 0;left: 0;right: 0cm;
+    background-color: white;
+}

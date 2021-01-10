@@ -11,5 +11,9 @@ export class InsuranceAvailComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  submit()
+  {
+    
+  }
 
 }

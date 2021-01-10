@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationStatusComponent implements OnInit {
 
+  submit()
+  {
+    
+  }
   constructor() { }
 
   ngOnInit(): void {

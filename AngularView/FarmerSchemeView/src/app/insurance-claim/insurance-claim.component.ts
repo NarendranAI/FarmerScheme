@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class InsuranceClaimComponent implements OnInit {
 
   constructor() { }
+  submit()
+  {
+    
+  }
 
   ngOnInit(): void {
   }
