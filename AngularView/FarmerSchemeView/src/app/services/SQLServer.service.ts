@@ -11,7 +11,7 @@ import {catchError,retry} from 'rxjs/operators';
 )
 export class SQLServerService
 {
-    root_url='http://localhost:38709/api/';
+    root_url='http://localhost:19051/api/';
     
     crop_controller_urls=['crop_insurance/','crops/'];
     insurance_controller_urls=['InsuranceAvails/','InsuranceClaims/','PolicyApplicants/','Policydetails/'];

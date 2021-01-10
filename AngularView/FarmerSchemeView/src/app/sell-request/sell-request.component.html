@@ -1,0 +1,48 @@
+<div class="container">
+    <div [hidden]="submitted">
+        <p style="text-align: center; font-size:xx-large; font-weight: bold; color: black;">Sell Request Form</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form (ngSubmit)="onSubmit()" #sellrequestform="ngForm">
+            <div class="form-group">
+                <label for="croptype">Crop Type</label>
+                <input type="text" class="form-control" id="croptype" 
+                 required 
+                 ngModel name="croptype" #croptype="ngModel">
+                 <div class="alert alert-danger" *ngIf="croptype.touched &&!croptype.valid">
+                    Crop Type is required
+                 </div>
+            </div>
+            <div class="form-group">
+                <label for="cropname">Crop Name</label>
+                <input type="text" class="form-control" id="cropname" 
+                 required 
+                 ngModel name="cropname" #cropname="ngModel">
+                <div class="alert alert-danger" *ngIf="cropname.touched &&!cropname.valid">
+                    Crop Name is required
+                 </div>
+            </div>
+            <div class="form-group">
+                <label for="fertilizertype">Fertilizer Type</label>
+                <input type="text" class="form-control" id="fertilizertype" 
+                 required 
+                 ngModel name="Fertilizer Type" #fertilizertype="ngModel">
+                 <div class="alert alert-danger" *ngIf="fertilizertype.touched &&!fertilizertype.valid">
+                    Fertilizer Type is required
+                 </div>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="text" class="form-control" id="quantity" 
+                 required 
+                 ngModel name="quantity" #quantity="ngModel">
+                 <div class="alert alert-danger" *ngIf="quantity.touched &&!quantity.valid">
+                    Quantity is required
+                 </div>
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!sellrequestform.form.valid">Place Request</button>
+        </form>
+    </div>
+</div>
