@@ -39,10 +39,10 @@
                     <td style="width: 20%;">
                         <li><button type="button" class="btn-custom"  >Login</button></li>
                         <li>
-                            <select name="Register" class="btn-custom btn-dropdown">
+                            <select name="Register" class="btn-custom btn-dropdown" (change)="reg($event.target.value)">
                                 <option selected disabled hidden>Register</option>
-                                <option value="farmer">Farmer Registration</option>
-                                <option value="trader">Trader Registration</option>
+                                <option value="FarmerRegistration">Farmer Registration</option>
+                                <option value="TraderRegistration" >Trader Registration</option>
                             </select>
                         </li>
                     </td>

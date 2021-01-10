@@ -9,7 +9,6 @@ import {TraderRegistrationComponent} from './trader-registration/trader-registra
 import {InsuranceClaimComponent} from './insurance-claim/insurance-claim.component';
 import { CalculatePremiumComponent} from './calculate-premium/calculate-premium.component';
 import {ApplicationStatusComponent} from './application-status/application-status.component';
-
 import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [

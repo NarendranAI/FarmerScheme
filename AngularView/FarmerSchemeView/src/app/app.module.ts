@@ -16,6 +16,7 @@ import { ApplicationStatusComponent } from './application-status/application-sta
 import { FarmerRegistrationComponent } from './farmer-registration/farmer-registration.component';
 import { AboutComponent } from './about/about.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   imports: [
   BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [SQLServerService],
   bootstrap: [AppComponent]
