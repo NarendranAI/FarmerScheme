@@ -1,13 +1,297 @@
 <div class="entire">
-<form #f="ngForm" (ngSubmit)="submit()" class="form-custom">
-    <div class="form-group">
-        <label for="Id">User Id</label>
-        <input  required type="text" class="form-control" ngModel name="Id" id="Id"   #Id="ngModel" >
-       <span *ngIf="Id.touched && Id.error.required">User Id Required</span>
-    </div>
+    <div class="FormTitle" style="background: thistle;">Farmer Registration</div>
+    <form ngForm name="f" #f="ngForm" class="form-group" (change)="Log(f)" (ngSubmit)="PostTraderReg(UT)" >
+        <table class="FormTable" >
+           <tr>
+            <td class="FormTitle" colspan="2" >Personal Details</td>
+           </tr> 
+        
+        <tr>
+            <td><label for="UserName">Full Name</label></td>
+            <td><input ngModel name="UserName" #UserName="ngModel" type="text" id="UserName" 
+                class="form-control" autofocus autocomplete="username" [(ngModel)]="UT.UserName"
+                required minlength="3" maxlength="20" [class.redbox]="UserName.dirty && UserName.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="UserName.pristine + UserName.valid">
+                Name Field is required and length must be between 3 and 20
+            </span></td></tr>
+        <tr>
+
+            <td><label for="MobileNumber">Contact No.</label></td>
+            <td><input ngModel name="MobileNumber" #MobileNumber="ngModel" type="text" id="MobileNumber"
+                class="form-control" pattern="[6789][0-9]{9}" [(ngModel)]="UT.MobileNumber"
+                 required [class.redbox]="MobileNumber.dirty && MobileNumber.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="MobileNumber.pristine + MobileNumber.valid">
+            Mobile Number is required and must be 10 digits
+        </span></td></tr>
+
+        <tr>
+            <td><label for="Email">E-mail id</label></td>
+            <td><input ngModel name="Email" #Email="ngModel" type="email" id="Email" [(ngModel)]="UT.Email"
+                class="form-control"  pattern="[0-9a-zA-Z_.]{1,20}@[a-z.]{2,10}"
+                required [class.redbox]="Email.dirty && Email.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Email.pristine + Email.valid">
+            Email is required. Format: email_id@website.com
+        </span></td></tr>
+
+        <tr>
+            <td class="FormTitle" colspan="2">
+                Address Details
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Address">Residential Address</label></td>
+            <td><textarea ngModel name="Address" #Address="ngModel" class="form-control" 
+                id="Address" rows="5" cols="50" [(ngModel)]="UT.Address"
+                required maxlength="100" [class.redbox]="Address.dirty && Address.invalid"></textarea></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Address.pristine + Address.valid">
+            Address is required
+        </span></td></tr>
+
+        <tr>
+            <td><label for="City">City</label></td>
+            <td><input ngModel name="City" #City="ngModel" 
+                class="form-control" id="City" type="text" [(ngModel)]="UT.City"
+                required maxlength="15" [class.redbox]="City.dirty && City.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="City.pristine + City.valid">
+            City is required
+        </span></td></tr>
+
+        <!-- <tr>
+            <td>
+                <label for="State">State</label>
+            </td>
+            <td>
+                <input ngModel name="State" #State="ngModel" 
+                class="form-control" id="State" type="text" 
+                required maxlength="15" [class.redbox]="State.dirty && State.invalid">
+            </td>
+        </tr>
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="State.pristine + State.valid">
+            State is required
+        </span></td></tr> -->
+
+        <tr>
+            <td>
+                <label for="Pincode">Pincode</label>
+            </td>
+            <td>
+                <input ngModel name="Pincode" #Pincode="ngModel" 
+                class="form-control" id="Pincode" type="text"  [(ngModel)]="UT.Pincode"
+                required pattern="[1-9][0-9]{5}" [class.redbox]="Pincode.dirty && Pincode.invalid">
+            </td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Pincode.pristine + Pincode.valid">
+            Pincode is required and must be six digits
+        </span></td></tr>
+        <tr>
+            <td class="FormTitle" colspan="2">
+                Land Details
+            </td>
+        </tr>
+        <tr>
+            <td><label for="Address">Land Address</label></td>
+            <td><textarea ngModel name="Address" #Address="ngModel" class="form-control" 
+                id="Address" rows="5" cols="50" [(ngModel)]="UT.Address"
+                required maxlength="100" [class.redbox]="Address.dirty && Address.invalid"></textarea></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Address.pristine + Address.valid">
+            Address is required
+        </span></td></tr>
+
+        <tr>
+            <td><label for="City">City</label></td>
+            <td><input ngModel name="City" #City="ngModel" 
+                class="form-control" id="City" type="text" [(ngModel)]="UT.City"
+                required maxlength="15" [class.redbox]="City.dirty && City.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="City.pristine + City.valid">
+            City is required
+        </span></td></tr>
+        
+        <tr>
+            <td>
+                <label for="Pincode">Pincode</label>
+            </td>
+            <td>
+                <input ngModel name="Pincode" #Pincode="ngModel" 
+                class="form-control" id="Pincode" type="text"  [(ngModel)]="UT.Pincode"
+                required pattern="[1-9][0-9]{5}" [class.redbox]="Pincode.dirty && Pincode.invalid">
+            </td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Pincode.pristine + Pincode.valid">
+            Pincode is required and must be six digits
+        </span></td></tr>
+
+
+        <tr>
+            <td class="FormTitle" colspan="2">
+                Bank Details
+            </td>
+        </tr>
+        <tr>
+            <td><label for="BankAccountNumber">Account Number</label>
+            </td>
+            <td>
+                <input ngModel name="BankAccountNumber" #BankAccountNumber="ngModel" 
+                class="form-control" id="BankAccountNumber" type="text"  [(ngModel)]="UT.BankAccountNumber"
+                required pattern="[0-9]{1,20}" [class.redbox]="BankAccountNumber.dirty && BankAccountNumber.invalid">
+            </td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="BankAccountNumber.pristine + BankAccountNumber.valid">
+            Account Number is required
+        </span></td></tr>
+
+        <tr>
+            <td>
+                <label for="IFSC_Code">IFSC Code</label>
+            </td>
+            <td>
+                <input ngModel name="IFSC_Code" #IFSC_Code="ngModel" 
+                class="form-control" id="IFSC_Code" type="text"  
+                required maxlength="20" [class.redbox]="IFSC_Code.dirty && IFSC_Code.invalid">
+            </td>
+        </tr>
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="IFSC_Code.pristine + IFSC_Code.valid">
+            IFSC Code is required
+        </span></td></tr>
+        <tr>
+            <td colspan="2" class="FormTitle">Document Upload</td>
+        </tr>
+        <tr>
+            <td>
+                <label for="AadharNumber">Aadhaar Number</label>
+            </td>
+            <td>
+                <input ngModel name="AadharNumber" #AadharNumber="ngModel" class="form-control" 
+                id="AadharNumber" type="text" [(ngModel)]="UT.AadharNumber"
+                required pattern="[0-9]{12}" [class.redbox]="AadharNumber.dirty && AadharNumber.invalid">
+            </td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="AadharNumber.pristine + AadharNumber.valid">
+            Aadhaar Number is required and must be 12 digits
+        </span></td></tr>
+
+        <tr>
+            <td><label for="Aadhaar">Upload Aadhaar</label></td>
+            <td><input ngModel name="Aadhaar" #Aadhaar="ngModel" 
+                class="form-control-file" id="Aadhaar" type="file" required ></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Aadhaar.pristine + Aadhaar.valid">
+            Aadhaar is required and must be in .pdf format
+        </span></td></tr>
+
+        <tr>
+            <td>
+                <label for="PanNo">PAN Number</label>
+            </td>
+            <td>
+                <input ngModel name="PanNo" #PanNo="ngModel"  required pattern="[A-Z]{5}[0-9]{4}[A-Z]"
+                class="form-control" id="PanNo" type="text" autocomplete="off"
+                [class.redbox]="PanNo.dirty && PanNo.invalid">
+            </td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="PanNo.pristine + PanNo.valid">
+            PAN Number is required
+        </span></td></tr>
+
+        <tr>
+            <td><label for="PAN">Upload PAN</label></td>
+            <td><input ngModel name="PAN" #PAN="ngModel" 
+                class="form-control-file" id="PAN" type="file" required></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="PAN.pristine + PAN.valid">
+           PAN is required and must be in .pdf format
+        </span></td></tr>
+
+        <tr>
+            <td><label for="TraderLicense">Trader License</label></td>
+            <td><input ngModel name="TraderLicense" #TraderLicense="ngModel" 
+                class="form-control-file" id="TraderLicense" type="file" required></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="TraderLicense.pristine + TraderLicense.valid">
+            TraderLicense is required and must be in .pdf format
+        </span></td></tr>
+
+        <tr>
+            <td><label for="Password">Password</label></td>
+            <td><input ngModel name="Password" #Password="ngModel" 
+                class="form-control" id="Password" type="password" [(ngModel)]="UT.Password"
+                autocomplete="new-password" 
+                required minlength="5" maxlength="20" [class.redbox]="Password.dirty && Password.invalid"></td>
+        </tr>
+
+        <tr><td></td><td><span class="alert alert-danger" [hidden]="Password.pristine + Password.valid">
+            Password is required and length must be 5 to 20
+        </span></td></tr>
+
+        <tr>
+            <td><label for="RetypePassword">Confirm Password</label></td>
+            <td><input ngModel name="RetypePassword" #RetypePassword="ngModel" 
+                class="form-control" type="password" id="RetypePassword" 
+                autocomplete="new-password" (keyup)="check_pswd(Password,RetypePassword)"
+                required minlength="5" maxlength="20" 
+                [class.redbox]="RetypePassword.dirty && RetypePassword.invalid" ></td>
+        </tr>
+
+        <tr><td></td>
+            <td>
+            <span class="alert alert-danger" [hidden]="pswd">
+                Passwords Do not match
+            </span>
+        </td></tr>
+
+        <tr >
+            <td><button class="btn btn-success" type="button">Back</button></td>
+
+            <td><button class="btn btn-danger" type="reset">Clear</button></td>
+
+            <td ><input class="btn btn-info" [disabled]="f.invalid" type="submit" value="Submit"></td>
+        </tr>
+        </table>
+        
+    </form>
+    <br><br>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="entire">
+    <div class="FormTitle" style="background: thistle;">Farmer Registration</div>
+    <div class="pagewidth">
+<form ngForm name="f" #f="ngForm" (ngSubmit)="submit()" class="form-group">
+    <div class="FormTitle" >Personal Details</div>
     <div class="form-group">
         <label for="Name">User Name</label>
-        <input type="text" name="Name" id="Name" ngModel #userName="ngModel" class="form-control">
+        <input ngModel name="Name"  #Name="ngModel" type="text" id="Name" class="form-control"
+        required minlength="3" maxlength="20" [class.redbox]="Name.dirty && Name.invalid"><br/>
+        <span class="alert alert-danger" [hidden]="Name.pristine + Name.valid">
+            Name Field is required and length must be between 3 and 20
+        </span>
     </div>
     <div class="form-group">
         <label for="Email">Email</label>
@@ -20,7 +304,7 @@
     
     <div class="form-group">
         <label for="Address">Address</label>
-        <input type="text" name="Address" id="Address" ngModel #userAddress="ngModel" class="form-control">
+        <textarea name="Address" id="Address" ngModel #userAddress="ngModel" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label for="City">City</label>
@@ -73,12 +357,13 @@
         <input type="text" name="cnfrmPassword" id="cnfrmPassword" ngModel #usercnfrmPassword="ngModel" class="form-control">
     </div>
     <div class="form-group">
-        <button class="btn-custom">Register</button>
-        <button class="btn-custom">Reset</button>
-        <button class="btn-custom" (click)="submit()">Back</button>
+        <button class="btn btn-success"style="margin-right: 2cm;">Register</button>
+        <button class="btn btn-danger" style="margin-right: 2cm;">Reset</button>
+        <button class="btn btn-info" (click)="submit()">Back</button>
         
 
     </div>
    
 </form>
 </div>
+</div> -->

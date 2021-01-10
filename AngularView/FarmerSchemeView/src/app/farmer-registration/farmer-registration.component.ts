@@ -22,6 +22,22 @@ BankAccountNumber:string
   {
     this.router.navigate(['/Login']);
   }
+  pswd:boolean=true;
+  check_pswd(x,y)
+  {
+    this.pswd= x.value==y.value;
+  }
+
+  UT={UserID:null,UserName:'',Email:'',MobileNumber:null,Password:'',TypeCode:'T',
+                  Address:'',City:'',Pincode:null,BankAccountNumber:null,AadharNumber:null,
+                LandAddress:'',LandCity:'',LandPinCode:null}
+
+                public Log(x)
+                {console.log(x); }
+              
+                PostTraderReg(x)
+                {
+                }
 
   ngOnInit(): void {
   }
