@@ -1,0 +1,14 @@
+p
+{
+    font-size: large;
+    font-weight: bold;
+    font-family: cursive;
+    color: white;
+    text-shadow: 1px 1px black;
+    padding: 1cm;
+}
+.alert
+{
+    color: black;
+    text-shadow: 1px 1px red;
+}

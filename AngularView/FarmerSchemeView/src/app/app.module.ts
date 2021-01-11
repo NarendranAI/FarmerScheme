@@ -17,6 +17,8 @@ import { FarmerRegistrationComponent } from './farmer-registration/farmer-regist
 import { AboutComponent } from './about/about.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { FarmersListComponent } from './farmers-list/farmers-list.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     ApplicationStatusComponent,
     FarmerRegistrationComponent,
     AboutComponent,
-    NavBarComponent
+    NavBarComponent,
+    FarmersListComponent,
+    UserProfileComponent
   ],
   imports: [
   BrowserModule,

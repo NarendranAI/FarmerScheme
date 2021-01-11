@@ -1,10 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable,throwError} from 'rxjs';
-import {catchError,retry} from 'rxjs/operators';
+import {EMPTY, Observable,throwError} from 'rxjs';
+import {catchError,isEmpty,retry} from 'rxjs/operators';
 import { Icrop } from './../models/Icrop';
 import { Icrop_insurance } from './../models/Icrop_insurance';
 import { IUserTables } from './../models/IUserTable';
+import {IUser} from './../models/IUser';
+import { Router } from '@angular/router';
+
 
 
 @Injectable
@@ -15,6 +18,25 @@ import { IUserTables } from './../models/IUserTable';
 )
 export class SQLServerService
 {
+    //CURRENT USER
+ 
+    public SetUser(input:IUser)
+    {
+        
+        localStorage.setItem("User",JSON.stringify(input))
+        let x=JSON.parse(localStorage.getItem('User'))
+        alert("You are Successfully LoggedIn "+x[0].UserName);
+    }
+    public Logout()
+    {
+        let x=JSON.parse(localStorage.getItem('User'))
+        alert("You are logged out of your account "+x[0].UserName);
+        localStorage.clear();
+        
+    }
+
+
+
     root_url='http://localhost/FarmerScheme/api/';
     
     crop_controller_urls=['crop_insurance/','crops/'];
@@ -35,6 +57,19 @@ export class SQLServerService
     }
 
     //UserTable CRUD services
+    getUserTableByEmail(email:string)
+    { 
+        email=email.replace(".","-");
+        console.log(email);
+        return this.http.get(this.root_url+'UserTable/'+'ByEmail/'+email,this.httpOptions);}
+    Login(UT:IUserTables):Observable<IUser>
+    {
+        return this.http.post<IUser>(this.root_url+'Login',UT,this.httpOptions);
+    }
+    getUserTableByMobile()
+    {}
+    getUserTableByType()
+    {}
     getAllUserTable():Observable<IUserTables[]>
     {
         return this.http.get<IUserTables[]>(this.root_url+this.users_controller_urls[2]+'GetUserTables',this.httpOptions)
@@ -62,5 +97,11 @@ export class SQLServerService
         this.http.post<IUserTables>(this.root_url+this.users_controller_urls[2]+'PostUserTable',val,this.httpOptions)
         .subscribe(resp=>{console.log(JSON.stringify(resp))}
         );
+    }
+
+    //Crop Table CRUD
+    postCrop()
+    {
+        
     }
 }

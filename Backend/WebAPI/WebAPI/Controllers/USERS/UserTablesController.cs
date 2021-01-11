@@ -11,11 +11,22 @@ using System.Web.Http.Description;
 using WebAPI.Models;
 using System.Web.Http.Cors;
 
+
 namespace WebAPI.Controllers.USERS
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserTablesController : ApiController
     {
+
+        public class EObj
+        {
+            public string email { get; set; }
+        }
+        public class TObj
+        {
+            public string type { get; set; }
+        }
+
         private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
 
         // GET: api/UserTables
@@ -36,6 +47,70 @@ namespace WebAPI.Controllers.USERS
 
             return Ok(userTable);
         }
+
+        [ResponseType(typeof(UserTable))]
+        [Route("api/usertable/ByEmail/{email}")]
+        
+        public IHttpActionResult GetUserTableByEmail(string email)
+        {
+                email=email.Replace('-', '.');
+            
+                 var usertable1 = from r in db.UserTables
+                                where r.Email ==email
+                                select r;
+            
+            
+            if (usertable1 == null)
+            {
+                return NotFound();
+            }
+            return Ok(usertable1);
+
+        }
+
+        [HttpPost]
+        [Route("api/Login")]
+        public IHttpActionResult PostLogin(UserTable user)
+        {
+            var usertable = from r in db.UserTables
+                            where r.Email==user.Email && r.Password == user.Password
+                            select new { r.UserID, r.UserName, r.Email,r.MobileNumber , r.TypeCode ,
+                            r.Address,r.City,r.Pincode,r.BankAccountNumber,r.AadharNumber,
+                            r.LandAddress,r.LandCity,r.LandPinCode};
+            if(usertable==null)
+            {
+                return NotFound();
+            }
+            return Ok(usertable);
+            
+        }
+
+        [ResponseType(typeof(UserTable))]
+        [Route("api/usertables/ByMobileNo/{mob}")]
+        public IHttpActionResult GetUserTableByMobileNo(long mob)
+        {
+            var usertable = from r in db.UserTables
+                            where r.MobileNumber == mob
+                            select r;
+            if (usertable == null)
+            {
+                return NotFound();
+            }
+            return Ok(usertable);
+
+        }
+
+        [Route("api/usertables/ByType")]
+        public IQueryable<UserTable> GetUserTablesByType(TObj t)
+        {
+            var usertable = from r in db.UserTables
+                            where r.TypeCode==t.type
+                            select r;
+           
+            return usertable;
+
+        }
+
 
         // PUT: api/UserTables/5
         [ResponseType(typeof(void))]
@@ -117,6 +192,7 @@ namespace WebAPI.Controllers.USERS
 
             return Ok(userTable);
         }
+
 
         protected override void Dispose(bool disposing)
         {

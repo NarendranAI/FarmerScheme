@@ -69,7 +69,7 @@ export class TraderRegistrationComponent implements OnInit {
 // x.value.TraderLicense
 this.UT=x;
 this.service.postUserTable(this.UT);
-  
+this.GoHome();
   }
 
   ngOnInit(): void {

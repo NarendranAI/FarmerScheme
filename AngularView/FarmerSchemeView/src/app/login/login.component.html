@@ -1,1 +1,37 @@
-<p>login works!</p>
+<div class="entire">
+        <form ngForm #f="ngForm" class="form-group" (change)="log(f)" (ngSubmit)="Login(UT)">
+            <div class="FormTitle" style="background-color: thistle;">Login Form</div>
+            <table class="FormTable">
+               
+                <tr>
+                    <td><label for="Email">Email</label></td>
+                    <td><input ngModel name="Email" type="email" id="Email" #Email [(ngModel)]="UT.Email"
+                        class="form-control" required pattern="[0-9a-zA-Z_.]{1,20}@[a-z.]{2,10}"
+                        [class.redbox]="Email.dirty && Email.invalid"></td>
+                </tr>
+                <tr>
+                    <td><label for="Password">Password</label></td>
+                    <td><input ngModel name="Password" type="password" id="Password" #Password
+                        class="form-control" required minlength="5" maxlength="20" [(ngModel)]="UT.Password"
+                        [class.redbox]="Password.dirty && Password.invalid"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align: right;"><a href="#" >Forgot Password?</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button type="button" (click)="GoHome()" class="btn btn-primary" style="margin-left: 5%;">Back</button>
+                        <button type="reset" class="btn btn-danger" style="margin-left: 6%;">Clear</button>
+                        <input class="btn btn-info" type="submit" style="margin-left: 12%;" value="Login"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>New User?</td>
+                    <td>Register Here-><a routerLink="/FarmerRegistration">Farmer?</a> or <a routerLink="/TraderRegistration">Trader?</a></td>
+                </tr>
+            </table>
+        </form>
+        <br>
+</div>

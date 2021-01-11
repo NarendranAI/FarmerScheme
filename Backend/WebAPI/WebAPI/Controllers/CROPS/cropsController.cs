@@ -24,6 +24,19 @@ namespace WebAPI.Controllers.CROPS
             return db.crops;
         }
 
+        [HttpGet]
+        [Route("api/CropbyName/{cropname}")]
+        public IHttpActionResult CropByName(string cropname)
+        {
+            var crop = from c in db.crops
+                       join i in db.crop_insurance
+                       on c.croptype equals i.croptype
+                       where c.cropname==cropname
+                       select new { c.cropid, c.cropname, c.croptype, i.premium_percentage, i.insurance_validity };
+                       
+            if (crop == null) { return NotFound(); }
+            return Ok(crop);
+        }
         // GET: api/crops/5
         [ResponseType(typeof(crop))]
         public IHttpActionResult Getcrop(int id)

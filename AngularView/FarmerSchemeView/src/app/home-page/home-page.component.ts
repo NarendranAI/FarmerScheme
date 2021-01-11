@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   constructor() { }
-  
+  UserType:string;
   image1=false;
   public image1toggle()
   {
@@ -31,6 +31,7 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem("User"))
   }
 
 }

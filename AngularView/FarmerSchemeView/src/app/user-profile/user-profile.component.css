@@ -1,0 +1,19 @@
+.entire
+{
+    position:absolute;
+    top:0;bottom: 0;left: 0;right: 0;
+    background-color: azure;
+}
+.btn
+{
+    height: 2cm;
+}
+
+tbody
+{
+    color: black;
+}
+td
+{
+    text-align: center;
+}

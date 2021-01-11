@@ -1,0 +1,58 @@
+<div class="entire">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+            <th>User ID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th rowspan="2">TypeCode (T-Trader|F-Farmer|A-Admin)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{x[0].UserID}}</td>
+            <td>{{x[0].UserName}}</td>
+            <td>{{x[0].Email}}</td>
+            <td>{{x[0].MobileNumber}}</td>
+            <td style="font-size: larger;font-weight: bolder;">{{x[0].TypeCode}}</td>
+        </tr>
+    </tbody>
+        <thead class="table-dark">
+        <tr>
+            <th>Address</th>
+            <th>City</th>
+            <th>Pincode</th>
+            <th>Bank Account Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{x[0].Address}}</td>
+            <td>{{x[0].City}}</td>
+            <td>{{x[0].Pincode}}</td>
+            <td>{{x[0].BankAccountNumber}}</td>
+            <td><button type="button" (click)="GoHome()" class="btn btn-primary">Go Back Home</button></td>
+        </tr>
+    </tbody>
+    <thead class="table-dark">
+        <tr>
+            
+            <th>Aadhar Number</th>
+            <th>Land Address</th>
+            <th>Land City</th>
+            <th>Land PinCode</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                
+                <td>{{x[0].AadharNumber}}</td>
+                <td>{{x[0].LandAddress}}</td>
+                <td>{{x[0].LandCity}}</td>
+                <td>{{x[0].LandPinCode}}</td>
+                <td><button type="button" (click)="Logout()" class="btn btn-primary">Logout</button></td>
+            </tr>
+    </tbody>
+       </table>
+</div>

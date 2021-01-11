@@ -56,14 +56,14 @@
         </span></td></tr>
 
         <tr>
-            <td><label for="City">City</label></td>
+            <td><label for="City">City, State Code</label></td>
             <td><input ngModel name="City" #City="ngModel" 
-                class="form-control" id="City" type="text" [(ngModel)]="UT.City"
-                required maxlength="15" [class.redbox]="City.dirty && City.invalid"></td>
+                class="form-control" id="City" type="text" [(ngModel)]="UT.City" pattern="*,*"
+                required maxlength="20" [class.redbox]="City.dirty && City.invalid"></td>
         </tr>
 
         <tr><td></td><td><span class="alert alert-danger" [hidden]="City.pristine + City.valid">
-            City is required
+            City & State are required
         </span></td></tr>
 
         <!-- <tr>

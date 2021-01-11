@@ -1,0 +1,63 @@
+table
+{
+    width: 30%;
+}
+a
+{
+    color: blue;
+    text-shadow: black;
+    font-size: large;
+
+}
+.FormTitle
+{
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+.entire
+{
+    position: absolute;
+    top:0;bottom:0;left:0;right:0;
+    background-color: white;
+}
+.FormTable, .FormTable tr td
+{
+    margin:auto;
+}
+.FormTable
+{
+border-spacing: 0px 1cm;
+}
+.alert-danger
+{   text-align: center;
+    font-size: small;
+}
+.redbox
+{
+    border: 2px solid red;
+}
+tr
+{
+    height: 0.5cm;
+}
+
+.btn
+{
+    border-radius: 5px;
+    height: 1cm;
+    padding: 0;
+    padding-left: 15px;padding-right: 15px;
+}
+.btn-info
+{
+    width: 3.5cm;
+}
+
+.compact
+{
+    width:60%;
+    margin-top: 3cm;
+    margin:auto
+}
