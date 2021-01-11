@@ -18,10 +18,7 @@ namespace WebAPI.Controllers.USERS
     public class UserTablesController : ApiController
     {
 
-        public class EObj
-        {
-            public string email { get; set; }
-        }
+       
         public class TObj
         {
             public string type { get; set; }

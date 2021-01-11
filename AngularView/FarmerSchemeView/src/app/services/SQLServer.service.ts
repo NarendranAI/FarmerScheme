@@ -62,10 +62,12 @@ export class SQLServerService
         email=email.replace(".","-");
         console.log(email);
         return this.http.get(this.root_url+'UserTable/'+'ByEmail/'+email,this.httpOptions);}
+
     Login(UT:IUserTables):Observable<IUser>
     {
         return this.http.post<IUser>(this.root_url+'Login',UT,this.httpOptions);
     }
+    
     getUserTableByMobile()
     {}
     getUserTableByType()
@@ -82,7 +84,7 @@ export class SQLServerService
     
     getUserTable(id:number)
     {
-        return this.http.get<IUserTables>(this.root_url+this.users_controller_urls[2]+'GetUserTable'+id,this.httpOptions)
+        return this.http.get<IUserTables>(this.root_url+this.users_controller_urls[2]+'GetUserTable/'+id,this.httpOptions)
     }
     putUserTable()
     {}
@@ -100,8 +102,12 @@ export class SQLServerService
     }
 
     //Crop Table CRUD
-    postCrop()
+    getCropByType(type:string):Observable<any[]>
     {
-        
+        type=type.replace(" ","-");
+        return this.http.get<any[]>(this.root_url+"CropbySeason/"+type,this.httpOptions);
     }
+    //PolicyDetail
+
+    //PolicyApplicant
 }

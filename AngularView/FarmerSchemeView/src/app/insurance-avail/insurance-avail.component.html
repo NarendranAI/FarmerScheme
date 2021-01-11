@@ -1,1 +1,51 @@
-<p>insurance-avail works!</p>
+<div class="entire">
+
+    <form ngForm #f="ngForm" (ngSubmit)="cropInsAvail()" (change)="log(f)">
+        <div class="FormTitle" style="background: cornsilk;"></div>
+        <table class="FormTable" border="1">
+            <tr>
+                <td><label for="croptype">Crop Type</label></td>
+                <td><select ngModel name="croptype" id="croptype" required #croptype  
+                    class="form-control" (change)="getCropByType($event.target.value)"
+                    [class.redbox]="croptype.dirty && croptype.invalid">
+                <option value="" hidden></option>
+                <option value="rabi">Rabi</option>
+                <option value="kharif">Kharif</option>
+                <option value="annual commercial">Annual Commercial</option>
+                <option value="horticultural">Horticultural</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="insurance_validity">Year</label></td>
+                <td><input ngModel name="insurance_validity" type="text" id="insurance_validity"
+                    class="form-control" 
+                    #insurance_validity required pattern="[2][0][2][0-1]"></td>
+            </tr>
+            <tr>
+                <td><label for="cropname">Crop</label></td>
+                <td><select ngModel name="cropname" id="cropname" 
+                     class="form-control" required #cropname
+                     >
+                     <option value=""></option> 
+                     <option  *ngFor="let crop of crops" [value]="crop">{{crop}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="SumInsured">Sum Insured</label></td>
+                <td><input ngModel name="SumInsured" type="text" #SumInsured 
+                    class="form-control" required id="SumInsured" pattern="([1][0-9]{5,6} | [2][0]{6})"></td>
+            </tr>
+            <tr>
+                <td><label for="Area">Area in hectares</label></td>
+                <td><input ngModel name="Area" #Area id="Area" 
+                    type="text" pattern="[1-9][0-9]{1,2}" required
+                    class="form-control" ></td>
+            </tr>
+            <tr>
+                <td><button type="reset">Reset</button></td>
+                <td><button type="button" (click)="Calculate(f.value)">Calculate</button></td>
+            </tr>
+        </table>
+    </form>
+</div>

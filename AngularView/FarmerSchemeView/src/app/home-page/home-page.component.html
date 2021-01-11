@@ -5,12 +5,13 @@
       <table style="width: 80%; margin: auto;">
           <tr>
               <td style="width: 25%;">
-            <div class="container" (mouseover)="image1toggle()" (mouseout)="image1toggle()">
+            <div class="container" (mouseover)="image1toggle()" (mouseout)="image1toggle()"
+            (click)="GoInsuranceAvail()">
                 <img [class.bg-img]="image1" src="../assets/farmer2.jpg" width="250px" height="300px" />
                 <p class="centered" [hidden]="!image1" >To avail insurance for the crops in event of crop loss</p>
                 <p class="short" [hidden]="image1">To apply for insurance</p>
                 <p>Farmer Corner</p>
-    
+                 
             </div>
             </td>
               <td style="width: 25%;">

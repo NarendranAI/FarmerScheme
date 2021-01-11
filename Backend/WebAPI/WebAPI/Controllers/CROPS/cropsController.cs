@@ -37,6 +37,25 @@ namespace WebAPI.Controllers.CROPS
             if (crop == null) { return NotFound(); }
             return Ok(crop);
         }
+
+        [HttpGet]
+        [Route("api/CropbySeason/{type}")]
+        public IHttpActionResult CropBySeason(string type)
+        {
+            type = type.Replace("-", " ");
+            var crop = from c in db.crops
+                       join i in db.crop_insurance
+                       on c.croptype equals i.croptype
+                       where c.croptype == type
+                       select new { c.cropid, c.cropname, c.croptype, i.premium_percentage, i.insurance_validity };
+
+            if (crop == null) { return NotFound(); }
+            return Ok(crop);
+        }
+
+
+
+
         // GET: api/crops/5
         [ResponseType(typeof(crop))]
         public IHttpActionResult Getcrop(int id)

@@ -17,7 +17,7 @@ export class FarmerRegistrationComponent implements OnInit {
     this.pswd= x.value==y.value;
   }
 
-  UT:IUserTables={UserID:null,UserName:'',Email:'',MobileNumber:null,Password:'',TypeCode:'T',
+  UT:IUserTables={UserID:null,UserName:'',Email:'',MobileNumber:null,Password:'',TypeCode:'F',
                   Address:'',City:'',Pincode:null,BankAccountNumber:null,AadharNumber:null,
                 LandAddress:'',LandCity:'',LandPinCode:null}
 

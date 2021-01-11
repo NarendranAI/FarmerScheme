@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home-page',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor() { }
+  x:any;
+  constructor(private router:Router) { }
   UserType:string;
   image1=false;
+GoInsuranceAvail()
+{
+  if(this.x!=null)
+  {if(this.x[0].TypeCode==="F")
+    {this.router.navigateByUrl("/InsuranceAvail");}
+    else
+    {alert("Login using Farmer Account/Create one if you dont have");}
+  }
+  else
+  {
+    alert("Login to apply")
+  }
+}
+
   public image1toggle()
   {
     this.image1=!this.image1;
@@ -31,7 +46,9 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem("User"))
+    this.x=JSON.parse(localStorage.getItem("User"))
+    console.log(this.x[0].TypeCode)
+    
   }
 
 }

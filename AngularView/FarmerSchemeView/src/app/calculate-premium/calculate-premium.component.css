@@ -1,0 +1,9 @@
+.entire
+{
+    position:absolute;
+    bottom: 0;top: 0;left: 0;right: 0;
+    background-color: bisque;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}

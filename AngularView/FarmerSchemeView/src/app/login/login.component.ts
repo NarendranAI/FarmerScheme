@@ -64,8 +64,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     console.log(localStorage.getItem("User"))
     let x=JSON.parse(localStorage.getItem('User'));
-    // console.log(x[0].UserID)
-    // console.log(typeof x[0].UserID)
+   
 
     if(x != null)
     {
