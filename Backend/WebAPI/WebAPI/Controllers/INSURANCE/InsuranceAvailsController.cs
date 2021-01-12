@@ -16,12 +16,20 @@ namespace WebAPI.Controllers.INSURANCE
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class InsuranceAvailsController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/InsuranceAvails
         public IQueryable<InsuranceAvail> GetInsuranceAvails()
         {
             return db.InsuranceAvails;
+        }
+
+        
+        [Route("api/insuranceavails/getappnobyuserid/{userid}")]
+        public IQueryable<int> GetInsuranceAvailsByUserID(int userid)
+        {
+           
+            return db.InsuranceAvails.Where(r=>r.UserID==userid).Select(r=>r.ApplicationId);
         }
 
         // GET: api/InsuranceAvails/5
@@ -72,7 +80,7 @@ namespace WebAPI.Controllers.INSURANCE
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/InsuranceAvails
+        // POST: api/InsuranceAvails/PostInsuranceAvail
         [ResponseType(typeof(InsuranceAvail))]
         public IHttpActionResult PostInsuranceAvail(InsuranceAvail insuranceAvail)
         {

@@ -41,8 +41,8 @@
           <Property Name="StockId" Type="int" />
           <Property Name="quantity" Type="int" />
           <Property Name="price" Type="int" />
-          <Property Name="status" Type="varchar" MaxLength="1" />
-          <Property Name="comment" Type="varchar" MaxLength="1" />
+          <Property Name="status" Type="varchar" MaxLength="30" />
+          <Property Name="comment" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="InsuranceAvail">
           <Key>
@@ -58,9 +58,9 @@
           </Key>
           <Property Name="ApplicationId" Type="int" Nullable="false" />
           <Property Name="AppliedDate" Type="date" />
-          <Property Name="ApplicationStatus" Type="varchar" MaxLength="1" />
-          <Property Name="ReasonForClaim" Type="varchar" MaxLength="1" />
-          <Property Name="Comment" Type="varchar" MaxLength="1" />
+          <Property Name="ApplicationStatus" Type="varchar" MaxLength="30" />
+          <Property Name="ReasonForClaim" Type="varchar" MaxLength="30" />
+          <Property Name="Comment" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="policyApplicants">
           <Key>
@@ -88,7 +88,7 @@
           <Property Name="StockId" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" />
           <Property Name="cropId" Type="int" />
-          <Property Name="Fertilizer" Type="varchar" MaxLength="1" />
+          <Property Name="Fertilizer" Type="varchar" MaxLength="30" />
           <Property Name="soilPH" Type="varbinary(max)" />
           <Property Name="Quantity" Type="int" />
           <Property Name="Selling_Price" Type="int" />
@@ -115,9 +115,9 @@
             <PropertyRef Name="AadharNumber" />
           </Key>
           <Property Name="AadharNumber" Type="bigint" Nullable="false" />
-          <Property Name="AadharCard" Type="varbinary(max)" Nullable="false" />
+          <Property Name="AadharCard" Type="varbinary(max)" />
           <Property Name="PanNumber" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="PanCard" Type="varbinary(max)" Nullable="false" />
+          <Property Name="PanCard" Type="varbinary(max)" />
           <Property Name="TraderCertificate" Type="varbinary(max)" />
           <Property Name="FarmerLicense" Type="varbinary(max)" />
         </EntityType>
@@ -427,8 +427,8 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
           <Property Name="StockId" Type="Int32" />
           <Property Name="quantity" Type="Int32" />
           <Property Name="price" Type="Int32" />
-          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="comment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Stock" Relationship="Self.FK__history__StockId__59C55456" FromRole="history" ToRole="Stock" />
           <NavigationProperty Name="UserTable" Relationship="Self.FK__history__UserID__58D1301D" FromRole="history" ToRole="UserTable" />
         </EntityType>
@@ -449,9 +449,9 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
           </Key>
           <Property Name="ApplicationId" Type="Int32" Nullable="false" />
           <Property Name="AppliedDate" Type="DateTime" Precision="0" />
-          <Property Name="ApplicationStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="ReasonForClaim" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicationStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonForClaim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="policyApplicant" Relationship="Self.FK__Insurance__Appli__17036CC0" FromRole="InsuranceClaim" ToRole="policyApplicants" />
         </EntityType>
         <EntityType Name="policyApplicant">
@@ -485,7 +485,7 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
           <Property Name="StockId" Type="Int32" Nullable="false" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="cropId" Type="Int32" />
-          <Property Name="Fertilizer" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Fertilizer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="soilPH" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Quantity" Type="Int32" />
           <Property Name="Selling_Price" Type="Int32" />
@@ -516,9 +516,9 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
             <PropertyRef Name="AadharNumber" />
           </Key>
           <Property Name="AadharNumber" Type="Int64" Nullable="false" />
-          <Property Name="AadharCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="AadharCard" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="PanNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PanCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="PanCard" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TraderCertificate" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="FarmerLicense" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
@@ -709,7 +709,7 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Farmer_SchemeEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Farmer_SchemeEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="crops" EntityType="Self.crop" />
           <EntitySet Name="crop_insurance" EntityType="Self.crop_insurance" />
           <EntitySet Name="exchanges" EntityType="Self.exchange" />
@@ -782,7 +782,7 @@ warning 6035: The relationship 'FK__UserTable__TypeC__70DDC3D8' has columns that
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Farmer_SchemeModelStoreContainer" CdmEntityContainer="Farmer_SchemeEntities">
+        <EntityContainerMapping StorageEntityContainer="Farmer_SchemeModelStoreContainer" CdmEntityContainer="Farmer_SchemeEntities1">
           <EntitySetMapping Name="crops">
             <EntityTypeMapping TypeName="Farmer_SchemeModel.crop">
               <MappingFragment StoreEntitySet="crop">

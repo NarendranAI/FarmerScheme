@@ -16,7 +16,7 @@ namespace WebAPI.Controllers.CROPS
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class cropsController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/crops
         public IQueryable<crop> Getcrops()
@@ -28,6 +28,7 @@ namespace WebAPI.Controllers.CROPS
         [Route("api/CropbyName/{cropname}")]
         public IHttpActionResult CropByName(string cropname)
         {
+            cropname = cropname.Replace("-", " ");
             var crop = from c in db.crops
                        join i in db.crop_insurance
                        on c.croptype equals i.croptype

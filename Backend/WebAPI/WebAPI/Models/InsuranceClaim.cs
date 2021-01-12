@@ -20,6 +20,6 @@ namespace WebAPI.Models
         public string ReasonForClaim { get; set; }
         public string Comment { get; set; }
     
-        public  policyApplicant policyApplicant { get; set; }
+        public virtual policyApplicant policyApplicant { get; set; }
     }
 }

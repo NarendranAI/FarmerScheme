@@ -58,7 +58,7 @@
         <tr>
             <td><label for="City">City, State Code</label></td>
             <td><input ngModel name="City" #City="ngModel" 
-                class="form-control" id="City" type="text" [(ngModel)]="UT.City" pattern="*,*"
+                class="form-control" id="City" type="text" [(ngModel)]="UT.City" pattern="[a-zA-Z]*,[a-zA-Z]*"
                 required maxlength="20" [class.redbox]="City.dirty && City.invalid"></td>
         </tr>
 
@@ -66,20 +66,6 @@
             City & State are required
         </span></td></tr>
 
-        <!-- <tr>
-            <td>
-                <label for="State">State</label>
-            </td>
-            <td>
-                <input ngModel name="State" #State="ngModel" 
-                class="form-control" id="State" type="text" 
-                required maxlength="15" [class.redbox]="State.dirty && State.invalid">
-            </td>
-        </tr>
-
-        <tr><td></td><td><span class="alert alert-danger" [hidden]="State.pristine + State.valid">
-            State is required
-        </span></td></tr> -->
 
         <tr>
             <td>
@@ -121,7 +107,7 @@
             </td>
             <td>
                 <input ngModel name="IFSC_Code" #IFSC_Code="ngModel" 
-                class="form-control" id="IFSC_Code" type="text"  
+                class="form-control" id="IFSC_Code" type="text"  [(ngModel)]="BT.IFSC_Code"
                 required maxlength="20" [class.redbox]="IFSC_Code.dirty && IFSC_Code.invalid">
             </td>
         </tr>

@@ -24,13 +24,16 @@ namespace WebAPI.Controllers.USERS
             public string type { get; set; }
         }
 
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/UserTables
         public IQueryable<UserTable> GetUserTables()
         {
             return db.UserTables;
         }
+
+       
+          
 
         // GET: api/UserTables/5
         [ResponseType(typeof(UserTable))]
@@ -189,6 +192,8 @@ namespace WebAPI.Controllers.USERS
 
             return Ok(userTable);
         }
+
+       
 
 
         protected override void Dispose(bool disposing)

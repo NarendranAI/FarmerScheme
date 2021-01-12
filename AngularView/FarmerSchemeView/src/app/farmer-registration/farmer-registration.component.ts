@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IUserTables } from './../models/IUserTable';
 import { SQLServerService } from './../services/SQLServer.service';
 import { Router } from '@angular/router';
+import { IUserBankDetails } from './../models/IUserBankDetail';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class FarmerRegistrationComponent implements OnInit {
   
   
 
-
+  BT:IUserBankDetails={BankAccountNumber:null,IFSC_Code:''}
   constructor(private service:SQLServerService,private router:Router) { }
 
   public GoHome()
@@ -37,8 +38,9 @@ export class FarmerRegistrationComponent implements OnInit {
 
   PostFarmerReg(x)
   {
-    this.UT=x;
+    this.BT.BankAccountNumber=this.UT.BankAccountNumber;
     this.service.postUserTable(this.UT);
+    //this.service.postUserBankDetails(this.BT);
     this.GoHome();
   }
 

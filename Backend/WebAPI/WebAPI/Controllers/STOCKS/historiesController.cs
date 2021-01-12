@@ -17,7 +17,7 @@ namespace WebAPI.Controllers.STOCKS
     public class historiesController : ApiController
     {
 
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/histories
         public IQueryable<history> Gethistories()

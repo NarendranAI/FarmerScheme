@@ -1,5 +1,5 @@
 export class IUserBankDetails
 {
-    public  BankAccountNumber :bigint;
+    public  BankAccountNumber :number;
     public  IFSC_Code :string;
 }

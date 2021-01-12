@@ -16,7 +16,8 @@ namespace WebAPI.Controllers.INSURANCE
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class InsuranceClaimsController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
+        
 
         // GET: api/InsuranceClaims
         public IQueryable<InsuranceClaim> GetInsuranceClaims()
@@ -24,7 +25,7 @@ namespace WebAPI.Controllers.INSURANCE
             return db.InsuranceClaims;
         }
 
-        // GET: api/InsuranceClaims/5
+        // GET: api/InsuranceClaims/GetInsuranceClaim/
         [ResponseType(typeof(InsuranceClaim))]
         public IHttpActionResult GetInsuranceClaim(int id)
         {
@@ -72,7 +73,7 @@ namespace WebAPI.Controllers.INSURANCE
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/InsuranceClaims
+        // POST: api/InsuranceClaims/PostInsuranceClaim
         [ResponseType(typeof(InsuranceClaim))]
         public IHttpActionResult PostInsuranceClaim(InsuranceClaim insuranceClaim)
         {

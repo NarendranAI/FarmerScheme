@@ -1,6 +1,6 @@
 <div class="entire">
     <div class="FormTitle" style="background: thistle;">Farmer Registration</div>
-    <form ngForm name="f" #f="ngForm" class="form-group" (change)="Log(f)" (ngSubmit)="PostFarmerReg(UT)" >
+    <form ngForm name="f" #f="ngForm" class="form-group" (change)="Log(BT)" (ngSubmit)="PostFarmerReg(UT)" >
         <table class="FormTable" >
            <tr>
             <td class="FormTitle" colspan="2" >Personal Details</td>
@@ -139,6 +139,10 @@
                 <input ngModel name="BankAccountNumber" #BankAccountNumber="ngModel" 
                 class="form-control" id="BankAccountNumber" type="text"  [(ngModel)]="UT.BankAccountNumber"
                 required pattern="[0-9]{1,20}" [class.redbox]="BankAccountNumber.dirty && BankAccountNumber.invalid">
+            
+            <input ngModel name="BankAccountNumber2" type="text" #BankAccountNumber2="ngModel"
+            [(ngModel)]="BT.BankAccountNumber" [value]="BankAccountNumber"
+            hidden>
             </td>
         </tr>
 
@@ -152,7 +156,7 @@
             </td>
             <td>
                 <input ngModel name="IFSC_Code" #IFSC_Code="ngModel" 
-                class="form-control" id="IFSC_Code" type="text"  
+                class="form-control" id="IFSC_Code" type="text"  [(ngModel)]="BT.IFSC_Code"
                 required maxlength="20" [class.redbox]="IFSC_Code.dirty && IFSC_Code.invalid">
             </td>
         </tr>

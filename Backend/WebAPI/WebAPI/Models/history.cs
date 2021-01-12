@@ -24,7 +24,7 @@ namespace WebAPI.Models
         public string status { get; set; }
         public string comment { get; set; }
     
-        public  Stock Stock { get; set; }
-        public  UserTable UserTable { get; set; }
+        public virtual Stock Stock { get; set; }
+        public virtual UserTable UserTable { get; set; }
     }
 }

@@ -42,8 +42,8 @@
     <Property Name="StockId" Type="Int32" />
     <Property Name="quantity" Type="Int32" />
     <Property Name="price" Type="Int32" />
-    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="comment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Stock" Relationship="Self.FK__history__StockId__59C55456" FromRole="history" ToRole="Stock" />
     <NavigationProperty Name="UserTable" Relationship="Self.FK__history__UserID__58D1301D" FromRole="history" ToRole="UserTable" />
   </EntityType>
@@ -64,9 +64,9 @@
     </Key>
     <Property Name="ApplicationId" Type="Int32" Nullable="false" />
     <Property Name="AppliedDate" Type="DateTime" Precision="0" />
-    <Property Name="ApplicationStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="ReasonForClaim" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="Comment" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ApplicationStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonForClaim" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Comment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="policyApplicant" Relationship="Self.FK__Insurance__Appli__17036CC0" FromRole="InsuranceClaim" ToRole="policyApplicants" />
   </EntityType>
   <EntityType Name="policyApplicant">
@@ -100,7 +100,7 @@
     <Property Name="StockId" Type="Int32" Nullable="false" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="cropId" Type="Int32" />
-    <Property Name="Fertilizer" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Fertilizer" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="soilPH" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Quantity" Type="Int32" />
     <Property Name="Selling_Price" Type="Int32" />
@@ -131,9 +131,9 @@
       <PropertyRef Name="AadharNumber" />
     </Key>
     <Property Name="AadharNumber" Type="Int64" Nullable="false" />
-    <Property Name="AadharCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="AadharCard" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="PanNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PanCard" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="PanCard" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="TraderCertificate" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="FarmerLicense" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
@@ -324,7 +324,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Farmer_SchemeEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Farmer_SchemeEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="crops" EntityType="Self.crop" />
     <EntitySet Name="crop_insurance" EntityType="Self.crop_insurance" />
     <EntitySet Name="exchanges" EntityType="Self.exchange" />

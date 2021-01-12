@@ -11,6 +11,38 @@ export class HomePageComponent implements OnInit {
   constructor(private router:Router) { }
   UserType:string;
   image1=false;
+
+  GoInsuranceClaim()
+  {
+    if(this.x!=null)
+  {if(this.x[0].TypeCode==="F")
+    {this.router.navigateByUrl("/InsuranceClaim");}
+    else
+    {alert("Login using Farmer Account/Create one if you dont have");}
+  }
+  else
+  {
+    alert("Login to claim")
+  }
+  
+
+  }
+
+
+  GoApplicationStatus()
+  {
+    if(this.x!=null)
+  {if(this.x[0].TypeCode==="F")
+    {this.router.navigateByUrl("/ApplicationStatus");}
+    else
+    {alert("Login using Farmer Account/Create one if you dont have");}
+  }
+  else
+  {
+    alert("Login to check application status")
+  }
+}
+
 GoInsuranceAvail()
 {
   if(this.x!=null)
@@ -47,7 +79,6 @@ GoInsuranceAvail()
 
   ngOnInit(): void {
     this.x=JSON.parse(localStorage.getItem("User"))
-    console.log(this.x[0].TypeCode)
     
   }
 

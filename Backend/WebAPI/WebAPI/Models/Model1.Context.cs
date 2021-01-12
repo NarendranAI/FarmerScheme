@@ -13,10 +13,10 @@ namespace WebAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Farmer_SchemeEntities : DbContext
+    public partial class Farmer_SchemeEntities1 : DbContext
     {
-        public Farmer_SchemeEntities()
-            : base("name=Farmer_SchemeEntities")
+        public Farmer_SchemeEntities1()
+            : base("name=Farmer_SchemeEntities1")
         {
         }
     
@@ -25,19 +25,19 @@ namespace WebAPI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public  DbSet<crop> crops { get; set; }
-        public  DbSet<crop_insurance> crop_insurance { get; set; }
-        public  DbSet<exchange> exchanges { get; set; }
-        public  DbSet<history> histories { get; set; }
-        public  DbSet<InsuranceAvail> InsuranceAvails { get; set; }
-        public  DbSet<InsuranceClaim> InsuranceClaims { get; set; }
-        public  DbSet<policyApplicant> policyApplicants { get; set; }
-        public  DbSet<PolicyDetail> PolicyDetails { get; set; }
-        public  DbSet<Stock> Stocks { get; set; }
-        public  DbSet<sysdiagram> sysdiagrams { get; set; }
-        public  DbSet<UserBankDetail> UserBankDetails { get; set; }
-        public  DbSet<UserDocument> UserDocuments { get; set; }
-        public  DbSet<UserTable> UserTables { get; set; }
-        public  DbSet<UserType> UserTypes { get; set; }
+        public virtual DbSet<crop> crops { get; set; }
+        public virtual DbSet<crop_insurance> crop_insurance { get; set; }
+        public virtual DbSet<exchange> exchanges { get; set; }
+        public virtual DbSet<history> histories { get; set; }
+        public virtual DbSet<InsuranceAvail> InsuranceAvails { get; set; }
+        public virtual DbSet<InsuranceClaim> InsuranceClaims { get; set; }
+        public virtual DbSet<policyApplicant> policyApplicants { get; set; }
+        public virtual DbSet<PolicyDetail> PolicyDetails { get; set; }
+        public virtual DbSet<Stock> Stocks { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<UserBankDetail> UserBankDetails { get; set; }
+        public virtual DbSet<UserDocument> UserDocuments { get; set; }
+        public virtual DbSet<UserTable> UserTables { get; set; }
+        public virtual DbSet<UserType> UserTypes { get; set; }
     }
 }

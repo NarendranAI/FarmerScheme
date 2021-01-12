@@ -7,6 +7,13 @@ import { Icrop_insurance } from './../models/Icrop_insurance';
 import { IUserTables } from './../models/IUserTable';
 import {IUser} from './../models/IUser';
 import { Router } from '@angular/router';
+import { IPolicyApplicants } from './../models/IPolicyApplicant';
+import { IPolicyDetail } from './../models/IPolicyDetail';
+import { IUserBankDetails } from './../models/IUserBankDetail';
+import { IinsuranceAvail } from './../models/IinsuranceAvail';
+import { portfolio } from './../models/portfolio';
+import { identifierModuleUrl } from '@angular/compiler';
+import { IinsuranceClaim } from './../models/IinsuranceClaim';
 
 
 
@@ -101,13 +108,82 @@ export class SQLServerService
         );
     }
 
+    //BankDetail Table
+    public postUserBankDetails(input:IUserBankDetails)
+    {
+        return this.http.post("http://localhost/FarmerScheme/api/UserBankDetails/PostUserBankDetail",
+        input,this.httpOptions).subscribe(resp=>{console.log(JSON.stringify(resp))})
+    }
+
+
+    public getAllBank()
+    {return this.http.get("http://localhost/FarmerScheme/api/UserBankDetails/GetUserBankDetails",this.httpOptions)}
     //Crop Table CRUD
     getCropByType(type:string):Observable<any[]>
     {
         type=type.replace(" ","-");
         return this.http.get<any[]>(this.root_url+"CropbySeason/"+type,this.httpOptions);
     }
+    getCropByName(name:string)
+    {
+        name=name.replace(" ","-");
+        return this.http.get(this.root_url+"CropByName/"+name);
+    }
+    //InsuranceAvail 
+    postInsAvail(input:IinsuranceAvail)
+    {
+        return this.http.post(this.root_url+"InsuranceAvails/PostInsuranceAvail",input,this.httpOptions).subscribe(
+            resp=>{console.log(JSON.stringify(resp))}
+        )
+    }
+    GetIAbyUserID(userid:number):Observable<number[]>
+    {
+        return this.http.get<number[]>("http://localhost/FarmerScheme/api/insuranceavails/getappnobyuserid/"+userid,this.httpOptions);
+    }
+
+
+    
+    //Insurance Claim
+    GetInsClaim(id:number)
+    {
+        return this.http.get<IinsuranceClaim>(this.root_url+"InsuranceClaims/GetInsuranceClaim/"+id,this.httpOptions)
+    }
+
+    PostInsClaim(input:IinsuranceClaim)
+    {
+        return this.http.post(this.root_url+"InsuranceClaims/PostInsuranceClaim",
+        input,this.httpOptions)
+    }
+
     //PolicyDetail
+    public getPolicyDetails()
+    {
+        return this.http.get("http://localhost/FarmerScheme/api/PolicyDetails/GetPolicyDetails",this.httpOptions);
+    }
+    public postPolicyDetails(input:IPolicyDetail)
+    {
+        return this.http.post("http://localhost/FarmerScheme/api/PolicyDetails/PostPolicyDetail",input,this.httpOptions);
+    }
+    public getPolicyDetailByID(id:number)
+    {
+        return this.http.get<IPolicyDetail>("http://localhost/FarmerScheme/api/PolicyDetails/GetPolicyDetail/"+id,
+        this.httpOptions)
+    }
 
     //PolicyApplicant
+    public getPolicyApplicant()
+    {
+        return this.http.get("http://localhost/FarmerScheme/api/policyApplicants/GetpolicyApplicants",this.httpOptions);
+    }
+    public getPolicyApplicantById(Id:number)
+    {
+        return this.http.get<IPolicyApplicants>("http://localhost/FarmerScheme/api/policyApplicants/GetpolicyApplicant/"+Id,
+        this.httpOptions)
+    }
+
+    public postPolicyApplicant(input:IPolicyApplicants)
+    {
+        return this.http.post("http://localhost/FarmerScheme/api/policyApplicants//PostpolicyApplicant",input,this.httpOptions);
+    }
+    
 }

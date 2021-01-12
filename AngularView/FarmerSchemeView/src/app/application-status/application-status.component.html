@@ -1,1 +1,33 @@
-<p>application-status works!</p>
+<div class="entire">
+    
+<form ngForm #f="ngForm" >
+    <div class="FormTitle" style="background-color: thistle;">Application Status</div>
+    <table class="FormTable" >
+        <tr>
+            <td ><label for="ApplicationId">ApplicationId</label></td>
+            <td ><input ngForm name="ApplicationId" id="ApplicationId"
+                [(ngModel)]="Ins.ApplicationId"
+                #ApplicationId type="text" class="form-control" (change)="GetStatus()"></td>
+        </tr> 
+    </table>
+    <table class="table" style="margin: auto;">
+        <thead class="table-dark">
+            <th>Application ID</th>
+            <th>Applied Date</th>
+            <th>Reason For Claim</th>
+            <th>Application Status</th>
+            <th>Comment</th>
+        </thead>
+        <tbody>
+            <td>{{Ins.ApplicationId}}</td>
+            <td>{{Ins.AppliedDate}}</td>
+            <td>{{Ins.ReasonForClaim}}</td>
+            <td>{{Ins.ApplicationStatus}}</td>
+            <td>{{Ins.Comment}}</td>
+        </tbody>
+    </table>
+    <button class="btn btn-success" type="button" (click)="GoHome()"
+    style="margin-left:50%;margin-top:10cm;margin-bottom: 2cm;">Back To Home</button>
+</form>
+
+</div>

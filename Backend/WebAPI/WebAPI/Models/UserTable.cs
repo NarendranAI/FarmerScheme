@@ -40,14 +40,14 @@ namespace WebAPI.Models
         public Nullable<int> LandPinCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<exchange> exchanges { get; set; }
+        public virtual ICollection<exchange> exchanges { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<history> histories { get; set; }
+        public virtual ICollection<history> histories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<InsuranceAvail> InsuranceAvails { get; set; }
+        public virtual ICollection<InsuranceAvail> InsuranceAvails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<policyApplicant> policyApplicants { get; set; }
+        public virtual ICollection<policyApplicant> policyApplicants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<Stock> Stocks { get; set; }
+        public virtual ICollection<Stock> Stocks { get; set; }
     }
 }

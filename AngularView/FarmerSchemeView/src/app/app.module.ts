@@ -19,6 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { FarmersListComponent } from './farmers-list/farmers-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { FolioComponent } from './folio/folio.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AboutComponent,
     NavBarComponent,
     FarmersListComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    FolioComponent
   ],
   imports: [
   BrowserModule,

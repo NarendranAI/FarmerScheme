@@ -16,9 +16,9 @@ namespace WebAPI.Controllers.INSURANCE
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class policyApplicantsController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
-        // GET: api/policyApplicants
+        // GET: api/policyApplicants/GetpolicyApplicants
         public IQueryable<policyApplicant> GetpolicyApplicants()
         {
             return db.policyApplicants;
@@ -72,7 +72,7 @@ namespace WebAPI.Controllers.INSURANCE
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/policyApplicants
+        // POST: api/policyApplicants//PostpolicyApplicant
         [ResponseType(typeof(policyApplicant))]
         public IHttpActionResult PostpolicyApplicant(policyApplicant policyApplicant)
         {

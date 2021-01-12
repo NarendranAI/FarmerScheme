@@ -25,6 +25,6 @@ namespace WebAPI.Models
         public Nullable<System.DateTime> insurance_validity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<crop> crops { get; set; }
+        public virtual ICollection<crop> crops { get; set; }
     }
 }

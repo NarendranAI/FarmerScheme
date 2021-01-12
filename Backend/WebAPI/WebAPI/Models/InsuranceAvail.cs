@@ -18,8 +18,8 @@ namespace WebAPI.Models
         public Nullable<int> UserID { get; set; }
         public int cropid { get; set; }
     
-        public  crop crop { get; set; }
-        public  policyApplicant policyApplicant { get; set; }
-        public  UserTable UserTable { get; set; }
+        public virtual crop crop { get; set; }
+        public virtual policyApplicant policyApplicant { get; set; }
+        public virtual UserTable UserTable { get; set; }
     }
 }

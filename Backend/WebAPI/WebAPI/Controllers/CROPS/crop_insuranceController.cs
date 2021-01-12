@@ -17,7 +17,7 @@ namespace WebAPI.Controllers.CROPS
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class crop_insuranceController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/crop_insurance
         public IQueryable<crop_insurance> Getcrop_insurance()

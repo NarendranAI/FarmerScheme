@@ -15,7 +15,8 @@
             </div>
             </td>
               <td style="width: 25%;">
-                <div class="container" (mouseover)="image2toggle()" (mouseout)="image2toggle()">
+                <div class="container" (mouseover)="image2toggle()" (mouseout)="image2toggle()"
+                (click)="GoInsuranceAvail()">
                     <img [class.bg-img]="image2" src="../assets/rupee_bg.jpg" width="250px" height="300px" />
                     <p class="centered" [hidden]="!image2">Calculate monthly premium to be paid based on your crop type</p>
                     <p class="short" [hidden]="image2">To calculate insurance</p>
@@ -23,15 +24,18 @@
                 </div>        
             </td>
               <td style="width: 25%;">
-                <div class="container" (mouseover)="image3toggle()" (mouseout)="image3toggle()">
+                <div class="container" (mouseover)="image3toggle()" (mouseout)="image3toggle()"
+                (click)="GoInsuranceClaim()">
                     <img [class.bg-img]="image3" src="../assets/sad_crop.jpg" width="250px" height="300px" />
                     <p class="centered" [hidden]="!image3">Report Crop Loss and claim the insurance amount</p>
-                    <p class="short" [hidden]="image3">To claim the insurance</p>
+                    <p class="short" [hidden]="image3" >To claim the insurance</p>
                     <p>Crop loss report</p>
                 </div>
             </td>
               <td style="width: 25%;">
-                <div class="container" (mouseover)="image4toggle()" (mouseout)="image4toggle()">
+                <div class="container" (mouseover)="image4toggle()" (mouseout)="image4toggle()"
+                (click)="GoApplicationStatus()"
+                >
                     <img [class.bg-img]="image4" src="../assets/tesseract_ocr.png" width="250px" height="300px" />
                     <p class="centered" [hidden]="!image4">To check your insurance Avail/Claim Application Status</p>
                     <p class="short" [hidden]="image4">To know application status</p>

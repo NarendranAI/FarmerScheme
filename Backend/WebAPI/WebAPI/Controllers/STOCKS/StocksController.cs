@@ -16,7 +16,7 @@ namespace WebAPI.Controllers.STOCKS
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class StocksController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/Stocks
         public IQueryable<Stock> GetStocks()

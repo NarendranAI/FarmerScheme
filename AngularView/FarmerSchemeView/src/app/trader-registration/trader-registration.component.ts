@@ -5,6 +5,7 @@ import { SQLServerService } from './../services/SQLServer.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { SourceMapGenerator } from '@angular/compiler/src/output/source_map';
+import { IUserBankDetails } from './../models/IUserBankDetail';
 
 
 
@@ -26,7 +27,7 @@ export class TraderRegistrationComponent implements OnInit {
   UT:IUserTables={UserID:null,UserName:'',Email:'',MobileNumber:null,Password:'',TypeCode:'T',
                   Address:'',City:'',Pincode:null,BankAccountNumber:null,AadharNumber:null,
                 LandAddress:'',LandCity:'',LandPinCode:null}
-
+  BT:IUserBankDetails={BankAccountNumber:null,IFSC_Code:''}
   
   
 
@@ -68,7 +69,9 @@ export class TraderRegistrationComponent implements OnInit {
 // x.value.State
 // x.value.TraderLicense
 this.UT=x;
+this.BT.BankAccountNumber=this.UT.BankAccountNumber;
 this.service.postUserTable(this.UT);
+//this.service.postUserBankDetails(this.BT);
 this.GoHome();
   }
 

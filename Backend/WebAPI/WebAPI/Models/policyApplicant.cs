@@ -18,9 +18,9 @@ namespace WebAPI.Models
         public Nullable<int> PolicyNo { get; set; }
         public Nullable<int> UserID { get; set; }
     
-        public  InsuranceAvail InsuranceAvail { get; set; }
-        public  InsuranceClaim InsuranceClaim { get; set; }
-        public  PolicyDetail PolicyDetail { get; set; }
-        public  UserTable UserTable { get; set; }
+        public virtual InsuranceAvail InsuranceAvail { get; set; }
+        public virtual InsuranceClaim InsuranceClaim { get; set; }
+        public virtual PolicyDetail PolicyDetail { get; set; }
+        public virtual UserTable UserTable { get; set; }
     }
 }

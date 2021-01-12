@@ -29,11 +29,11 @@ namespace WebAPI.Models
         public Nullable<int> Quantity { get; set; }
         public Nullable<int> Selling_Price { get; set; }
     
-        public  crop crop { get; set; }
+        public virtual crop crop { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<exchange> exchanges { get; set; }
+        public virtual ICollection<exchange> exchanges { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<history> histories { get; set; }
-        public  UserTable UserTable { get; set; }
+        public virtual ICollection<history> histories { get; set; }
+        public virtual UserTable UserTable { get; set; }
     }
 }

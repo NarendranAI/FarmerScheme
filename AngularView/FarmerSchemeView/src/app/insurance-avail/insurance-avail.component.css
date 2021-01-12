@@ -2,15 +2,25 @@
 {
     position:absolute;
     bottom: 0;top: 0;left: 0;right: 0;
-    background-color: bisque;
+    background-color: rgb(255, 228, 196);
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
+label
+{
+    color: black;
+    font-size: larger;
+    text-shadow: 1px 1px white;
+}
 table
 {
     width: 60%;
+}
+.table-dark th
+{
+    background-color: rgba(0, 0, 0, 0.699);
 }
 .FormTitle
 {

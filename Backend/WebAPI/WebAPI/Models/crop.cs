@@ -25,10 +25,10 @@ namespace WebAPI.Models
         public string cropname { get; set; }
         public string croptype { get; set; }
     
-        public  crop_insurance crop_insurance { get; set; }
+        public virtual crop_insurance crop_insurance { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<InsuranceAvail> InsuranceAvails { get; set; }
+        public virtual ICollection<InsuranceAvail> InsuranceAvails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public  ICollection<Stock> Stocks { get; set; }
+        public virtual ICollection<Stock> Stocks { get; set; }
     }
 }

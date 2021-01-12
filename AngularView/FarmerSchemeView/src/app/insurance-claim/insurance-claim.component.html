@@ -1,1 +1,67 @@
-<p>insurance-claim works!</p>
+<div class="entire">
+    <form ngForm #f="ngForm" (ngSubmit)="InsClaim()" (change)="log(f)">
+
+     <table class="FormTable">
+
+        <tr>
+            <td style="font-size: larger;">Insurance Company</td>
+            <td>{{insComp | uppercase}}</td>
+        </tr>
+         <tr>
+             <td><label for="ApplicationId">Application ID</label></td>
+             <td><input ngModel name="ApplicationId" #ApplicationId required
+                type="text" [(ngModel)]="pa.ApplicationId" class="form-control"
+                (change)="Changed()">
+            </td>
+         </tr>
+         <tr>
+             <td><label for="UserID">User ID</label></td>
+             <td>
+                 <input ngModel name="UserID" #UserID type="text"
+                 class="form-control" required
+                 [(ngModel)]="pa.UserID" disabled >
+             </td>
+         </tr>
+         <tr>
+             <td><label for="PolicyNo">Policy Number</label></td>
+             <td>
+                 <input ngModel name="PolicyNo" #PolicyNo class="form-control"
+                 required
+                 type="text" [(ngModel)]="pa.PolicyNo" disabled>
+            </td>
+         </tr>
+         <tr>
+             <td><label for="SumInsured">Sum Insured</label></td>
+             <td><input ngModel type="text" name="SumInsured" id="SumInsured"
+                (change)="Change1()" required
+                class="form-control" [(ngModel)]="pd.SumInsured"></td>
+         </tr>
+
+         <tr>
+             <td><label for="UserName">Name of Insuree</label></td>
+             <td><input type="text" ngModel name="UserName" required
+                class="form-control" [(ngModel)]="x[0].UserName"></td>
+         </tr>
+         <tr>
+             <td><label for="AppliedDate">Date of Claim</label></td>
+             <td><input ngModel type="date" id="AppliedDate" name="AppliedDate" required
+                class="form-control" [(ngModel)]="claim.AppliedDate"></td>
+         </tr>
+         <tr>
+             <td><label for="ReasonForClaim">Reason For Claim</label></td>
+             <td><input ngModel type="text" name="ReasonForClaim" id="ReasonForClaim" required
+                class="form-control" [(ngModel)]="claim.ReasonForClaim"></td>
+         </tr>
+         <tr>
+             <td><button type="button" (click)="GoHome()" class="btn btn-secondary">Back to Home</button></td>
+             <td>
+                 <button type="reset" class="btn btn-danger">Clear</button>
+
+                <input style="margin-left: 30%;" type="submit" class="btn btn-success"
+                [disabled]="f.invalid"
+                value="Claim"/>
+                </td>
+         </tr>
+     </table>
+    </form>
+</div>

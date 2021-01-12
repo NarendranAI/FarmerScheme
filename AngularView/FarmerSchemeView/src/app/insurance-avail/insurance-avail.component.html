@@ -1,8 +1,8 @@
 <div class="entire">
 
     <form ngForm #f="ngForm" (ngSubmit)="cropInsAvail()" (change)="log(f)">
-        <div class="FormTitle" style="background: cornsilk;"></div>
-        <table class="FormTable" border="1">
+        <div class="FormTitle" style="background: lavender;"> Insurance Application</div>
+        <table class="FormTable" >
             <tr>
                 <td><label for="croptype">Crop Type</label></td>
                 <td><select ngModel name="croptype" id="croptype" required #croptype  
@@ -43,9 +43,39 @@
                     class="form-control" ></td>
             </tr>
             <tr>
-                <td><button type="reset">Reset</button></td>
-                <td><button type="button" (click)="Calculate(f.value)">Calculate</button></td>
+                <td><button type="reset" class="btn btn-primary">Reset</button></td>
+                <td><button type="button" class="btn btn-info" (click)="Calculate(f.value)">Calculate</button></td>
             </tr>
         </table>
+        <table class="table" style="margin: auto;">
+            <thead class="table-dark">
+                <th>Insurance Company</th>
+                <th>Sum Insured(Per Hectare)</th>
+                <th>Share Premium</th>
+                <th>Premium Amount</th>
+                <th>Crop Name</th>
+                <th>Area</th>
+                <th>Sum Insured</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Team 16 Finance Ltd ({{comp_premium*0.01 |percent}})</td>
+                    <td>{{p.SumInsured_per_hectare}}</td>
+                    <td>{{p.SharePremium}}</td>
+                    <td>{{p.Premium}}</td>
+                    <td>{{one_crop}}</td>
+                    <td>{{p.Area}}</td>
+                    <td>{{p.SumInsured}}</td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <button class="btn btn-danger" type="button" (click)="GoHome()">Back To Home</button>
+                        <input class="btn btn-success"
+                        style="margin-left: 50%;" type="submit" value="Apply"></td>
+                </tr>
+            </tbody>
+        </table>
+
     </form>
+
 </div>

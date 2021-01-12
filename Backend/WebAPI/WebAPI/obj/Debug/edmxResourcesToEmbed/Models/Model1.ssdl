@@ -36,8 +36,8 @@
     <Property Name="StockId" Type="int" />
     <Property Name="quantity" Type="int" />
     <Property Name="price" Type="int" />
-    <Property Name="status" Type="varchar" MaxLength="1" />
-    <Property Name="comment" Type="varchar" MaxLength="1" />
+    <Property Name="status" Type="varchar" MaxLength="30" />
+    <Property Name="comment" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="InsuranceAvail">
     <Key>
@@ -53,9 +53,9 @@
     </Key>
     <Property Name="ApplicationId" Type="int" Nullable="false" />
     <Property Name="AppliedDate" Type="date" />
-    <Property Name="ApplicationStatus" Type="varchar" MaxLength="1" />
-    <Property Name="ReasonForClaim" Type="varchar" MaxLength="1" />
-    <Property Name="Comment" Type="varchar" MaxLength="1" />
+    <Property Name="ApplicationStatus" Type="varchar" MaxLength="30" />
+    <Property Name="ReasonForClaim" Type="varchar" MaxLength="30" />
+    <Property Name="Comment" Type="varchar" MaxLength="30" />
   </EntityType>
   <EntityType Name="policyApplicants">
     <Key>
@@ -83,7 +83,7 @@
     <Property Name="StockId" Type="int" Nullable="false" />
     <Property Name="UserID" Type="int" />
     <Property Name="cropId" Type="int" />
-    <Property Name="Fertilizer" Type="varchar" MaxLength="1" />
+    <Property Name="Fertilizer" Type="varchar" MaxLength="30" />
     <Property Name="soilPH" Type="varbinary(max)" />
     <Property Name="Quantity" Type="int" />
     <Property Name="Selling_Price" Type="int" />
@@ -110,9 +110,9 @@
       <PropertyRef Name="AadharNumber" />
     </Key>
     <Property Name="AadharNumber" Type="bigint" Nullable="false" />
-    <Property Name="AadharCard" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AadharCard" Type="varbinary(max)" />
     <Property Name="PanNumber" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="PanCard" Type="varbinary(max)" Nullable="false" />
+    <Property Name="PanCard" Type="varbinary(max)" />
     <Property Name="TraderCertificate" Type="varbinary(max)" />
     <Property Name="FarmerLicense" Type="varbinary(max)" />
   </EntityType>

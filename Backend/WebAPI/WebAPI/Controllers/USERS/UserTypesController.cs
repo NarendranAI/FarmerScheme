@@ -17,7 +17,7 @@ namespace WebAPI.Controllers.USERS
 
     public class UserTypesController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
         // GET: api/UserTypes
         public IQueryable<UserType> GetUserTypes()

@@ -16,9 +16,9 @@ namespace WebAPI.Controllers.USERS
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UserBankDetailsController : ApiController
     {
-        private Farmer_SchemeEntities db = new Farmer_SchemeEntities();
+        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
-        // GET: api/UserBankDetails
+        // GET: api/UserBankDetails/GetUserBankDetails
         public IQueryable<UserBankDetail> GetUserBankDetails()
         {
             return db.UserBankDetails;
@@ -72,7 +72,7 @@ namespace WebAPI.Controllers.USERS
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/UserBankDetails
+        // POST: api/UserBankDetails/PostUserBankDetail
         [ResponseType(typeof(UserBankDetail))]
         public IHttpActionResult PostUserBankDetail(UserBankDetail userBankDetail)
         {
