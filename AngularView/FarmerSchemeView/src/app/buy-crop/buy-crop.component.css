@@ -1,0 +1,41 @@
+.FormTitle
+{
+    font-size: 0.8cm;
+    font-weight:normal;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-shadow: 1px 1px green;
+    background-image: linear-gradient(to right,greenyellow,rgba(0, 0, 255, 0.534),lime);
+}
+.FormTable, .FormTable tr td
+{
+    margin:auto;
+}
+input[type='text']
+{
+    border: 2px solid brown;
+}
+.FormTable
+{
+border-spacing: 0px 0.4cm;
+}
+tr
+{
+    height: 0.5cm;
+}
+
+.btn
+{
+    border-radius: 5px;
+    height: 1cm;
+    padding: 0;
+    padding-left: 15px;padding-right: 15px;
+}
+
+.entire
+{
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+    background-image: linear-gradient(ghostwhite,greenyellow);
+}

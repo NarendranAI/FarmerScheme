@@ -1,0 +1,45 @@
+.FormTitle
+{
+    font-size: 0.8cm;
+    font-weight:normal;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-shadow: 1px 1px green;
+}
+
+.entire
+{
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+    background-image: linear-gradient(ghostwhite,greenyellow);
+}
+.Stocktable
+{
+    width: 90%;
+    margin: auto;
+    border-spacing: 0.2cm;
+}
+.table-dark th
+{
+    background-color: black;
+}
+.Stocktable tr
+{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 1cm;
+    background-color: floralwhite;
+}
+.Stocktable tr td:hover
+{
+    background-image: linear-gradient(to top,ghostwhite,white);
+    font-weight: bold;
+    font-size: 0.5cm;
+
+}
+table.can tbody tr td:nth-child(7),.can th:nth-child(7)
+{
+    display: none;
+    background-color: black;
+}

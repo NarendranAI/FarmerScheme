@@ -1,5 +1,5 @@
-import { Time } from "@angular/common";
 
+import { Time } from '@angular/common';
 export class Ihistory
 {
     public  transid : number;

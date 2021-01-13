@@ -50,10 +50,20 @@ export class InsuranceAvailComponent implements OnInit {
   
   cropInsAvail()
   {
-    this.service.postPolicyDetails(this.p).subscribe(data=>console.log(data));
-    this.service.postPolicyApplicant(this.pa).subscribe(data=>console.log(data));
-    console.log(this.ii)
-    this.service.postInsAvail(this.ii);
+    this.service.postPolicyDetails(this.p).subscribe(
+      data=>{
+        this.service.postPolicyApplicant(this.pa).subscribe(
+          data=>{
+            this.service.postInsAvail(this.ii).subscribe(
+              data=>{alert("Insurance Apllied Successfully")},
+              resp=>{console.log(resp)}
+            )
+          },
+          resp=>{console.log(resp)});
+      },
+      resp=>{console.log(resp)}
+      );
+    
     this.GoHome();
   }
 

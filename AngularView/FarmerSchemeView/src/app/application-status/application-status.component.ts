@@ -29,7 +29,15 @@ export class ApplicationStatusComponent implements OnInit {
     if(this.Ins.ApplicationId!=null && this.Ins.ApplicationId>0)
     {
       this.service.GetInsClaim(this.Ins.ApplicationId)
-      .subscribe(data=>{this.Ins=data},error=>{console.log(error.ok)})
+      .subscribe(data=>{this.Ins=data},
+        error=>{
+          console.log(error.ok);
+          if(!error.ok)
+          {
+            alert("Apply for Insurance Claim To track the application or check the associated application number in your profile tab")
+            this.GoHome();
+          }
+        })
     }
   }
   ngOnInit(): void {

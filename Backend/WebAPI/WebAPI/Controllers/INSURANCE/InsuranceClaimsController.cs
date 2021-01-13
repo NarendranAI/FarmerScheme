@@ -19,7 +19,7 @@ namespace WebAPI.Controllers.INSURANCE
         private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
         
 
-        // GET: api/InsuranceClaims
+        // GET: api/InsuranceClaims/GetInsuranceClaims
         public IQueryable<InsuranceClaim> GetInsuranceClaims()
         {
             return db.InsuranceClaims;
@@ -101,6 +101,27 @@ namespace WebAPI.Controllers.INSURANCE
             }
 
             return CreatedAtRoute("DefaultApi", new { id = insuranceClaim.ApplicationId }, insuranceClaim);
+        }
+        //InsuranceClaims/PutStatus
+        public IHttpActionResult PutStatus(InsuranceClaim claim)
+        {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var row = db.InsuranceClaims.Find(claim.ApplicationId);
+            if(row!=null)
+            {
+                row.ApplicationStatus = claim.ApplicationStatus;
+                db.SaveChanges();
+
+            }
+            else
+            {
+                return NotFound();
+            }
+            return Ok(row);
         }
 
         // DELETE: api/InsuranceClaims/5

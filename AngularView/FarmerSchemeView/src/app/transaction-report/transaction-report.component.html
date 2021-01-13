@@ -1,0 +1,36 @@
+<div class="entire">
+    <button class="tab btn btn-primary" (click)="GoHome()" >Back To Home</button>
+    <button class="tab btn btn-warning" (click)="GoMarket()" >To Market Place</button>
+    
+    <br>
+    <br>
+    <table class="table" >
+        <thead class="table-dark">
+            <th>StockID</th>
+            <th>TransactionID</th>
+            <th>UserName</th>
+            <th>OrderType</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            
+        </thead>
+        <tbody *ngFor="let h of histories;let i=index">
+            <tr *ngIf="(h.status==='Approved')&&(h.UserID===UID)">
+                <td>{{h.StockId}}</td><td>{{h.transid}}</td>
+                <td>{{h.UserTable.UserName}}</td>
+                <td>{{h.comment}}</td>
+                <td>{{h.status}}</td>
+                <td>{{h.date | date}}</td>
+                <td>{{h.date | date:"HH:mm"}}</td>
+                <td>{{h.price}}</td>
+                <td>{{h.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+</div>

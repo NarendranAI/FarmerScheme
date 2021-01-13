@@ -1,0 +1,72 @@
+<div class="entire">
+    <div class="FormTitle">
+        Sell Crop
+    </div>
+    <form ngForm #f f="ngForm" (ngSubmit)="SellCrop()" class="form-group">
+        <table class="FormTable">
+            <tr>
+                <td><label for="croptype">Crop Type</label></td>
+                <td>
+                    <select ngModel name="croptype" id="croptype" required #croptype  
+                    class="form-control" (change)="getCropByType($event.target.value)"
+                    [class.redbox]="croptype.dirty && croptype.invalid">
+                <option value="" hidden></option>
+                <option value="rabi">Rabi</option>
+                <option value="kharif">Kharif</option>
+                <option value="annual commercial">Annual Commercial</option>
+                <option value="horticultural">Horticultural</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="cropname">Crop</label></td>
+                <td><select ngModel name="cropname" id="cropname" 
+                     class="form-control" required #cropname (change)="getCropByName($event.target.value)"
+                     >
+                     <option value=""></option> 
+                     <option  *ngFor="let crop of crops" [value]="crop">{{crop}}</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="cropId">Crop ID</label></td>
+                <td><input ngModel name="cropId" id="cropId" #cropid="ngModel" class="form-control"
+                    [(ngModel)]="stock.cropId" type="text" required disabled>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Fertilizer">Fertilizer Name</label></td>
+                <td><input ngModel name="Fertilizer" id="Fertilizer" #Fertilizer="ngModel"
+                    required
+                    class="form-control" [(ngModel)]="stock.Fertilizer" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="PH">PH Value(1-10)</label></td>
+                <td><input ngModel required id="PH" name="PH" class="form-control" pattern="[0-9]{1,2}"
+                     [(ngModel)]="PH" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Quantity">Sell Quantity</label></td>
+                <td><input ngModel #Quantity type="text" name="Quantity" id="Quantity"
+                    [(ngModel)]="stock.Quantity"
+                    class="form-control" pattern="[1-9][0-9]{1,10}" required>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="Selling_Price">Sell Price</label></td>
+                <td><input ngModel type="text" name="Selling_Price" id="Selling_Price" #Selling_Price
+                    class="form-control" required pattern="[1-9][0-9]{1,10}"
+                    [(ngModel)]="stock.Selling_Price" ></td>
+            </tr>
+            <tr>
+                <td><button class="btn btn-primary" type="button" (click)="GoHome()">Back To Home</button></td>
+                <td>
+                    <button class="btn btn-danger">Clear</button>
+                    <input class="btn btn-success" style="margin-left: 2%;" type="submit" value="Sell">
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+</div>

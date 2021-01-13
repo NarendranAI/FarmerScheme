@@ -30,7 +30,7 @@
                             <a [routerLink]="['/About']">About</a>
                         </li>
                         <li [class.nav-tabs]="flag" [class.nav-link]="flag" (mouseover)="somefn()" (mouseout)="somefn()">
-                            <a href="#">Trade</a>
+                            <a (click)="ToTrade()">Trade</a>
                         </li>
                         
                     </td >
@@ -50,8 +50,10 @@
                     </td>
                     <td>
                         <li><button [hidden]="!checkLogin" class="btn-custom" (click)="Logout()">Logout</button></li>
-                        <li><button [hidden]="!checkLogin" class="btn-custom"
+                        <li><button [hidden]="!checkLogin || (checkType==='A' || '' )" class="btn-custom"
                             (click)="GoProfile()" >Profile</button></li>
+                        <li><button [hidden]="!checkLogin || !(checkType==='A' || '')" class="btn-custom"
+                            (click)="GoAdmin()" >Requests</button></li>
                     </td>
                 </tr>
             </table>

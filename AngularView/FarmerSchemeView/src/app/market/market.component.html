@@ -1,0 +1,31 @@
+<div class="entire">
+    <div style="width: 90%;margin:auto;display: block;" class="FormTitle">
+        Market Watch
+    </div>
+    <button class="btn btn-warning" style="width:50%;" (click)="GoHome()">Go To Home</button>
+    <button class="btn btn-warning" style="width:50%;" (click)="GoBuy()">Go To Bidding</button>
+
+    <table class="table StockTable" [class.can]="!CanBuy">
+        <thead class="table-dark">
+            <th>Stock ID</th>
+            <th>Seller Name</th>
+            <th>Crop Name</th>
+            <th>Fertilizer and PH</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Cart</th>
+        </thead>
+        <tbody *ngFor="let x of stocks">
+            <tr *ngIf="(x.histories[0].status==='Approved')&&(x.histories[0].UserTable.TypeCode==='F')">  
+            <td>{{x.StockId}}</td>
+            <td>{{x.histories[0].UserTable.UserName}}</td>
+            <td>{{x.crop.cropname}}</td>
+            <td>{{x.Fertilizer}}</td>
+            <td>{{x.Quantity}}</td>
+            <td>{{x.Selling_Price}}</td>
+            <td>{{x.histories[0].status}}</td>
+            
+            </tr>
+        </tbody>
+    </table>
+</div>

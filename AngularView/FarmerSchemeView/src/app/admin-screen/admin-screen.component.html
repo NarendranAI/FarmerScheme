@@ -1,0 +1,63 @@
+<div class="entire">
+    <button class="tab btn btn-primary" (click)="GoHome()" >Back To Home</button>
+    <button class="tab btn btn-warning" (click)="GoMarket()" >To Market Place</button>
+    <button class="tab btn btn-info" (click)="ClickMarket()">Stock Approval</button>
+    <button class="tab btn btn-danger" (click)="ClickApplication()">Insurance Claim Approval</button>
+    <br>
+    <br>
+    <table class="table" [hidden]="b">
+        <thead class="table-dark">
+            <th>StockID</th>
+            <th>TransactionID</th>
+            <th>UserName</th>
+            <th>OrderType</th>
+            <th>Crop Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </thead>
+        <tbody *ngFor="let h of histories;let i=index">
+            <tr *ngIf="!(h.status==='Approved')">
+                <td>{{h.StockId}}</td><td>{{h.transid}}</td>
+                <td>{{h.UserTable.UserName}}</td>
+                <td>{{h.comment}}</td>
+                <td>{{h.Stock.crop.cropname}}</td>
+                <td>{{h.date | date}}</td>
+                <td>{{h.date | date:"HH:mm"}}</td>
+                <td>{{h.price}}</td>
+                <td>{{h.quantity}}</td>
+                <td><button type="button" (click)="approveStock(h,i)">Approve</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table" [hidden]="a">
+        <thead class="table-dark">
+            <th>ApplicationID</th>
+            <th>UserID</th>
+            <th>UserName</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Reason For Claim</th>
+            <th>Sum Insured</th>
+            <th>Area</th>
+            <th>Action</th>
+        </thead>
+        <tbody *ngFor="let c of claims">
+            <tr *ngIf="!(c.ApplicationStatus==='Approved')">
+                 <td>{{c.ApplicationId}}</td>
+                 <td>{{c.policyApplicant.UserID}}</td>
+                 <td>{{c.policyApplicant.UserTable.UserName}}</td>
+                 <td>{{c.ApplicationStatus}}</td>
+                 <td>{{c.AppliedDate | date}}</td>
+                 <td>{{c.ReasonForClaim}}</td>
+                 <td>{{c.policyApplicant.PolicyDetail.SumInsured}}</td>
+                 <td>{{c.policyApplicant.PolicyDetail.Area}}</td>
+                 <td><button type="button" (click)="approveClaim(c)">Approve</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

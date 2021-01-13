@@ -24,11 +24,11 @@ namespace WebAPI.Controllers.STOCKS
             return db.exchanges;
         }
 
-        // GET: api/exchanges/5
+        // GET: api/exchanges/GetExchange/5
         [ResponseType(typeof(exchange))]
         public IHttpActionResult Getexchange(int id)
         {
-            exchange exchange = db.exchanges.Find(id);
+            exchange exchange = db.exchanges.Where(r => r.UserId == id).FirstOrDefault<exchange>();
             if (exchange == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace WebAPI.Controllers.STOCKS
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/exchanges
+        // POST: api/exchanges/Postexchange
         [ResponseType(typeof(exchange))]
         public IHttpActionResult Postexchange(exchange exchange)
         {
@@ -101,6 +101,9 @@ namespace WebAPI.Controllers.STOCKS
 
             return CreatedAtRoute("DefaultApi", new { id = exchange.StockId }, exchange);
         }
+
+
+       
 
         // DELETE: api/exchanges/5
         [ResponseType(typeof(exchange))]

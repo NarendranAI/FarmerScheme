@@ -20,6 +20,13 @@ import { FormsModule } from '@angular/forms';
 import { FarmersListComponent } from './farmers-list/farmers-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { FolioComponent } from './folio/folio.component';
+import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
+import { TraderHomeComponent } from './trader-home/trader-home.component';
+import { MarketComponent } from './market/market.component';
+import { SellCropComponent } from './sell-crop/sell-crop.component';
+import { BuyCropComponent } from './buy-crop/buy-crop.component';
+import { TransactionReportComponent } from './transaction-report/transaction-report.component';
+import { AdminScreenComponent } from './admin-screen/admin-screen.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,14 @@ import { FolioComponent } from './folio/folio.component';
     NavBarComponent,
     FarmersListComponent,
     UserProfileComponent,
-    FolioComponent
+    FolioComponent,
+    FarmerHomeComponent,
+    TraderHomeComponent,
+    MarketComponent,
+    SellCropComponent,
+    BuyCropComponent,
+    TransactionReportComponent,
+    AdminScreenComponent
   ],
   imports: [
   BrowserModule,

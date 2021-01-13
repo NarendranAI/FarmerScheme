@@ -5,16 +5,18 @@ import {catchError,isEmpty,retry} from 'rxjs/operators';
 import { Icrop } from './../models/Icrop';
 import { Icrop_insurance } from './../models/Icrop_insurance';
 import { IUserTables } from './../models/IUserTable';
-import {IUser} from './../models/IUser';
 import { Router } from '@angular/router';
 import { IPolicyApplicants } from './../models/IPolicyApplicant';
 import { IPolicyDetail } from './../models/IPolicyDetail';
 import { IUserBankDetails } from './../models/IUserBankDetail';
 import { IinsuranceAvail } from './../models/IinsuranceAvail';
-import { portfolio } from './../models/portfolio';
 import { identifierModuleUrl } from '@angular/compiler';
 import { IinsuranceClaim } from './../models/IinsuranceClaim';
-
+import { portfolio } from './../models/portfolio';
+import {IUser} from './../models/IUser';
+import { IStock } from './../models/IStock';
+import { Ihistory } from './../models/Ihistory';
+import { Iexchange } from './../models/Iexchange';
 
 
 @Injectable
@@ -70,11 +72,11 @@ export class SQLServerService
         console.log(email);
         return this.http.get(this.root_url+'UserTable/'+'ByEmail/'+email,this.httpOptions);}
 
-    Login(UT:IUserTables):Observable<IUser>
+    Login(UT:IUserTables):Observable<IUser> 
     {
         return this.http.post<IUser>(this.root_url+'Login',UT,this.httpOptions);
     }
-    
+     
     getUserTableByMobile()
     {}
     getUserTableByType()
@@ -132,9 +134,7 @@ export class SQLServerService
     //InsuranceAvail 
     postInsAvail(input:IinsuranceAvail)
     {
-        return this.http.post(this.root_url+"InsuranceAvails/PostInsuranceAvail",input,this.httpOptions).subscribe(
-            resp=>{console.log(JSON.stringify(resp))}
-        )
+        return this.http.post(this.root_url+"InsuranceAvails/PostInsuranceAvail",input,this.httpOptions)
     }
     GetIAbyUserID(userid:number):Observable<number[]>
     {
@@ -154,7 +154,13 @@ export class SQLServerService
         return this.http.post(this.root_url+"InsuranceClaims/PostInsuranceClaim",
         input,this.httpOptions)
     }
+    getAllInsClaims()
+    {return this.http.get<IinsuranceClaim[]>(this.root_url+"InsuranceClaims/GetInsuranceClaims",this.httpOptions)}
 
+    putInsStatus(claim:IinsuranceClaim)
+    {
+        return this.http.put(this.root_url+"InsuranceClaims/PutStatus",claim,this.httpOptions)
+    }
     //PolicyDetail
     public getPolicyDetails()
     {
@@ -184,6 +190,54 @@ export class SQLServerService
     public postPolicyApplicant(input:IPolicyApplicants)
     {
         return this.http.post("http://localhost/FarmerScheme/api/policyApplicants//PostpolicyApplicant",input,this.httpOptions);
+    }
+
+    //Stock Tables
+    public GetAllStock()
+    {
+        return this.http.get<IStock[]>(this.root_url+"Stocks/GetStocks",this.httpOptions)
+    }
+    public GetStockById(id:number)
+    {
+        return this.http.get<IStock>(this.root_url+"Stocks/GetStock/"+id,this.httpOptions)
+    }
+    public PutStock(id:number,stock:IStock)
+    {
+        return this.http.put(this.root_url+"Stocks/PutStock/"+id,stock,this.httpOptions)
+    }
+    public PostStock(stock:IStock)
+    {
+        return this.http.post(this.root_url+"Stocks/PostStock",stock,this.httpOptions)
+    }
+    public PutStockQuantity(stock:IStock)
+    {return this.http.put(this.root_url+"stocks/putStockQuantity",stock,this.httpOptions)}
+
+    //Exchange table
+    public PostExchange(ex:Iexchange)
+    {
+        return this.http.post<Iexchange>(this.root_url+"exchanges/Postexchange",ex,this.httpOptions)
+    }
+    public GetExchangeById(id:number)
+    {
+        return this.http.get<Iexchange>(this.root_url+"exchanges/GetExchange/"+id,this.httpOptions)
+    }
+
+    //History Table
+    public getAllHistory()
+    {
+        return this.http.get<Ihistory[]>(this.root_url+"histories/Gethistories",this.httpOptions)
+    }
+    public PostHistory(input:Ihistory)
+    {
+        return this.http.post(this.root_url+"histories/Posthistory",input,this.httpOptions)
+    }
+    public putHistory(id:number,body:Ihistory)
+    {
+        return this.http.put(this.root_url+"histories/Puthistory/"+id,body,this.httpOptions)
+    }
+    public putHistoryStatus(body:Ihistory)
+    {
+        return this.http.put(this.root_url+"histories/PutStatus",body,this.httpOptions)
     }
     
 }

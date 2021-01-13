@@ -19,7 +19,7 @@ namespace WebAPI.Controllers.STOCKS
 
         private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
-        // GET: api/histories
+        // GET: api/histories/Gethistories
         public IQueryable<history> Gethistories()
         {
             return db.histories;
@@ -38,7 +38,7 @@ namespace WebAPI.Controllers.STOCKS
             return Ok(history);
         }
 
-        // PUT: api/histories/5
+        // PUT: api/histories/Puthistory
         [ResponseType(typeof(void))]
         public IHttpActionResult Puthistory(int id, history history)
         {
@@ -73,7 +73,24 @@ namespace WebAPI.Controllers.STOCKS
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/histories
+        //histories/PutStatus
+
+        public IHttpActionResult PutStatus([FromBody] history history)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest("Not a valid model");
+            var row = db.histories.Where(r => r.transid == history.transid).FirstOrDefault<history>();
+            if(row!=null)
+            {
+                row.status = history.status;
+                db.SaveChanges();
+            }
+            else
+            { return NotFound(); }
+            return Ok(row);
+        }
+
+        // POST: api/histories/Posthistory
         [ResponseType(typeof(history))]
         public IHttpActionResult Posthistory(history history)
         {

@@ -3,9 +3,6 @@ import { IUserTables } from './../models/IUserTable';
 import { Router } from '@angular/router';
 import { SQLServerService } from './../services/SQLServer.service';
 import { IUser } from '../models/IUser';
-import { EMPTY } from 'rxjs';
-import { isEmpty } from 'rxjs/operators';
-import { PromiseType } from 'protractor/built/plugins';
 
 @Component({
   selector: 'app-login',

@@ -1,0 +1,87 @@
+<div class="entire">
+
+    <div class="FormTitle">
+        Bidding Form
+    </div>
+    <form ngForm #f name="ngForm"
+    (ngSubmit)="Submit()" class="form-control">
+    <table class="FormTable">
+        <tr>
+            <td>
+                <label for="StockId">Stock ID</label>
+            </td>
+                <td><input ngModel name="StockId" id="StockId" type="text" class="form-control"
+                    [(ngModel)]="stock.StockId" (change)="Change()"
+                    >
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="cropname">Crop Name</label>
+            </td>
+                <td><input ngModel name="cropname" id="cropname"  [(ngModel)]="cropname" disabled
+                     type="text" class="form-control">
+                </td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <label for="croptype">Crop Type</label>
+            </td>
+                <td><input ngModel name="croptype" id="croptype" [(ngModel)]="croptype" disabled
+                    type="text" class="form-control"></td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label for="Fertilizer">Fertilizer, PH</label>
+            </td>
+                <td><input ngModel name="Fertilizer" id="Fertilizer" [(ngModel)]="stock.Fertilizer" disabled
+                    type="text" class="form-control"></td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label for="quantity">Available stock</label>
+            </td>
+                <td><input ngModel name="quantity" id="quantity" [(ngModel)]="quantity" disabled
+                    type="text" class="form-control"></td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label for="bid">Base Price</label>
+            </td>
+                <td><input ngModel name="bid" id="bid"  [(ngModel)]="bid" disabled
+                    type="text" class="form-control"></td>
+            
+        </tr>
+
+        <tr>
+            <td>
+                <label for="Quantity">Buy Quantity</label>
+            </td>
+                <td><input ngModel name="Quantity" id="Quantity"  [(ngModel)]="stock.Quantity"
+                    type="text" class="form-control"></td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label for="Selling_Price">Bid Price</label>
+            </td>
+                <td><input ngModel name="Selling_Price" id="Selling_Price"  [(ngModel)]="stock.Selling_Price"
+                    type="text" class="form-control"></td>
+            
+        </tr>
+
+            </table>
+            <table class="FormTable">
+                <tr>
+                    <td><button class="btn btn-secondary" (click)="GoHome()" type="button">Back to Home</button></td>
+                    <td><button class="btn btn-danger" type="reset">Clear</button></td>
+                    <td><button class="btn btn-warning" type="submit">Make Bid</button></td>
+                </tr>
+            </table>
+    </form>
+</div>

@@ -18,13 +18,13 @@ namespace WebAPI.Controllers.STOCKS
     {
         private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
 
-        // GET: api/Stocks
+        // GET: api/Stocks/GetStocks
         public IQueryable<Stock> GetStocks()
         {
             return db.Stocks;
         }
 
-        // GET: api/Stocks/5
+        // GET: api/Stocks/GetStock
         [ResponseType(typeof(Stock))]
         public IHttpActionResult GetStock(int id)
         {
@@ -37,7 +37,7 @@ namespace WebAPI.Controllers.STOCKS
             return Ok(stock);
         }
 
-        // PUT: api/Stocks/5
+        // PUT: api/Stocks/PutStock
         [ResponseType(typeof(void))]
         public IHttpActionResult PutStock(int id, Stock stock)
         {
@@ -71,8 +71,24 @@ namespace WebAPI.Controllers.STOCKS
 
             return StatusCode(HttpStatusCode.NoContent);
         }
+        //api/stocks/putStockQuantity
+        public IHttpActionResult putStockQuantity(Stock stock)
+        {
+            if (!ModelState.IsValid)
+            { return BadRequest(); }
+            var row = db.Stocks.Find(stock.StockId);
+            if(row!=null)
+            {
+                row.Quantity = row.Quantity-stock.Quantity;
+                db.SaveChanges();
+            }
+            else
+            { return NotFound(); }
 
-        // POST: api/Stocks
+            return Ok(row);
+        }
+
+        // POST: api/Stocks/PostStock
         [ResponseType(typeof(Stock))]
         public IHttpActionResult PostStock(Stock stock)
         {
