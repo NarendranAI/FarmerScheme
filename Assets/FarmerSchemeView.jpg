@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://localhost:4200/FarmerRegistration -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>FarmerSchemeView</title>
+  <!--<base href="/">--><base href=".">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="http://localhost:4200/favicon.ico">
+<link rel="stylesheet" href="./FarmerSchemeView_files/styles.css"><script type="text/javascript" async="" src="./FarmerSchemeView_files/js"></script><script src="./FarmerSchemeView_files/js(1)" async=""></script><style>
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */</style><style>nav[_ngcontent-trt-c46]
+{   background-image: linear-gradient(to right,green,greenyellow);
+    border: 0.5px solid greenyellow;
+    padding:20px;
+    padding-bottom: 5px;
+}
+nav[_ngcontent-trt-c46]   ul[_ngcontent-trt-c46]   li[_ngcontent-trt-c46]
+{
+    display: inline;
+    text-align: center;
+    padding-left: 20px;
+}
+nav[_ngcontent-trt-c46]   ul[_ngcontent-trt-c46]   li[_ngcontent-trt-c46]   a[_ngcontent-trt-c46]
+{
+    text-decoration: none;
+    color: floralwhite;
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+nav[_ngcontent-trt-c46]   ul[_ngcontent-trt-c46]   li[_ngcontent-trt-c46]   a[_ngcontent-trt-c46]:hover
+{
+    zoom: 1.3;
+    padding: 0px;
+}
+nav[_ngcontent-trt-c46]   ul[_ngcontent-trt-c46]   li[_ngcontent-trt-c46]   button[_ngcontent-trt-c46]
+{
+    
+    display: inline-block;
+    border-radius: 5px;
+    width: 2cm;
+    padding: 3px;
+}
+.btn-custom[_ngcontent-trt-c46]
+{
+    background-color: rgba(0, 100, 0, 0.87);
+    color: white;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+.btn-custom[_ngcontent-trt-c46]:hover, .btn-custom[_ngcontent-trt-c46]:active
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+
+}
+.btn-dropdown[_ngcontent-trt-c46]
+{
+    width: 2.5cm;
+    height: 0.8cm;
+    padding: 3px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    box-shadow:1px 1px  #000000;
+    text-align: center;
+
+}
+.btn-dropdown[_ngcontent-trt-c46]:hover
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+}
+.title_card[_ngcontent-trt-c46]
+{
+    background-color: white;
+    height: 2.5cm;
+    width: 100%;
+    border: 1px solid black;
+}
+.yojana_logo[_ngcontent-trt-c46]
+{
+    margin-left: 0.5cm;
+}
+h1[_ngcontent-trt-c46]
+{
+    text-transform: capitalize;
+}
+.container[_ngcontent-trt-c46]
+{
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: large;
+  position: relative;
+  cursor:default;
+
+}
+.container[_ngcontent-trt-c46]   .centered[_ngcontent-trt-c46]
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 1px 1px yellow;
+    font-weight: bolder;
+    font-size: larger;
+}
+.bg-img[_ngcontent-trt-c46]
+{
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+.short[_ngcontent-trt-c46]
+{
+    font-size: smaller;
+    font-family: cursive;
+
+ }
+.dropbtn[_ngcontent-trt-c46] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown[_ngcontent-trt-c46] {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content[_ngcontent-trt-c46] {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content[_ngcontent-trt-c46]   a[_ngcontent-trt-c46] {
+  color:black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content[_ngcontent-trt-c46]   a[_ngcontent-trt-c46]:hover {background-color: #f1f1f1;
+ 
+}
+
+.dropdown[_ngcontent-trt-c46]:hover   .dropdown-content[_ngcontent-trt-c46] {
+  
+    display: block;
+
+}
+
+.dropdown[_ngcontent-trt-c46]:hover   .dropbtn[_ngcontent-trt-c46] {
+  background-color: #3e8e41;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhvbWUtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksNkRBQTZEO0lBQzdELCtCQUErQjtJQUMvQixZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCO0FBQ0E7O0lBRUksZUFBZTtJQUNmLGtCQUFrQjtJQUNsQixrQkFBa0I7QUFDdEI7QUFDQTs7SUFFSSxxQkFBcUI7SUFDckIsa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixpQkFBaUI7SUFDakIsMEJBQTBCO0FBQzlCO0FBRUE7O0lBRUksU0FBUztJQUNULFlBQVk7QUFDaEI7QUFDQTs7O0lBR0kscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixVQUFVO0lBQ1YsWUFBWTtBQUNoQjtBQUNBOztJQUVJLHVDQUF1QztJQUN2QyxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLHlDQUF5Qzs7QUFFN0M7QUFFQTs7SUFFSSx5Q0FBeUM7O0FBRTdDO0FBRUE7O0lBRUksWUFBWTtJQUNaLGFBQWE7SUFDYixZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLGtCQUFrQjtJQUNsQix1QkFBdUI7SUFDdkIscUJBQXFCO0lBQ3JCLDJCQUEyQjtJQUMzQixrQkFBa0I7O0FBRXRCO0FBQ0E7O0lBRUkseUNBQXlDO0FBQzdDO0FBRUE7O0lBRUksdUJBQXVCO0lBQ3ZCLGFBQWE7SUFDYixXQUFXO0lBQ1gsdUJBQXVCO0FBQzNCO0FBQ0E7O0lBRUksa0JBQWtCO0FBQ3RCO0FBRUE7O0lBRUksMEJBQTBCO0FBQzlCO0FBQ0E7O0VBRUUsdUJBQXVCO0VBQ3ZCLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLGtCQUFrQjtFQUNsQixnQkFBZ0I7RUFDaEIsa0JBQWtCO0VBQ2xCLGNBQWM7O0FBRWhCO0FBSUE7O0lBRUksa0JBQWtCO0lBQ2xCLE9BQU87SUFDUCxRQUFRO0lBQ1IsK0JBQStCO0lBQy9CLDJCQUEyQjtJQUMzQixtQkFBbUI7SUFDbkIsaUJBQWlCO0FBQ3JCO0FBQ0E7O0lBRUksbUJBQW1CO0lBQ25CLDJCQUEyQjtBQUMvQjtBQUNBOztJQUVJLGtCQUFrQjtJQUNsQixvQkFBb0I7O0NBRXZCO0FBRUQ7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLGFBQWE7RUFDYixlQUFlO0VBQ2YsWUFBWTtFQUNaLGVBQWU7QUFDakI7QUFFQSxrRUFBa0U7QUFDbEU7RUFDRSxrQkFBa0I7RUFDbEIscUJBQXFCO0FBQ3ZCO0FBRUEseUNBQXlDO0FBQ3pDO0VBQ0UsYUFBYTtFQUNiLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxVQUFVO0FBQ1o7QUFFQSw4QkFBOEI7QUFDOUI7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixjQUFjO0FBQ2hCO0FBRUEsNENBQTRDO0FBQzVDLDJCQUEyQix5QkFBeUI7O0FBRXBEO0FBRUEsb0NBQW9DO0FBQ3BDOztJQUVJLGNBQWM7O0FBRWxCO0FBRUEsMEZBQTBGO0FBQzFGO0VBQ0UseUJBQXlCO0FBQzNCIiwiZmlsZSI6ImhvbWUtcGFnZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibmF2XHJcbnsgICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsZ3JlZW4sZ3JlZW55ZWxsb3cpO1xyXG4gICAgYm9yZGVyOiAwLjVweCBzb2xpZCBncmVlbnllbGxvdztcclxuICAgIHBhZGRpbmc6MjBweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cHg7XHJcbn1cclxubmF2IHVsIGxpXHJcbntcclxuICAgIGRpc3BsYXk6IGlubGluZTtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHBhZGRpbmctbGVmdDogMjBweDtcclxufVxyXG5uYXYgdWwgbGkgYVxyXG57XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICBjb2xvcjogZmxvcmFsd2hpdGU7XHJcbiAgICBmb250LXdlaWdodDogYm9sZGVyO1xyXG4gICAgZm9udC1zaXplOiBsYXJnZXI7XHJcbiAgICB0ZXh0LXNoYWRvdzogMXB4IDFweCBibGFjaztcclxufVxyXG5cclxubmF2IHVsIGxpIGE6aG92ZXJcclxue1xyXG4gICAgem9vbTogMS4zO1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG59XHJcbm5hdiB1bCBsaSBidXR0b25cclxue1xyXG4gICAgXHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICB3aWR0aDogMmNtO1xyXG4gICAgcGFkZGluZzogM3B4O1xyXG59XHJcbi5idG4tY3VzdG9tXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHJnYmEoMCwgMTAwLCAwLCAwLjg3KTtcclxuICAgIGNvbG9yOiB3aGl0ZTtcclxuICAgIGZvbnQtd2VpZ2h0Om5vcm1hbDtcclxuICAgIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmO1xyXG4gIFxyXG59XHJcblxyXG4uYnRuLWN1c3RvbTpob3ZlciwuYnRuLWN1c3RvbTphY3RpdmVcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIHJnYmEoMCwgMTAwLCAwLCAwLjQzMik7XHJcblxyXG59XHJcblxyXG4uYnRuLWRyb3Bkb3duXHJcbntcclxuICAgIHdpZHRoOiAyLjVjbTtcclxuICAgIGhlaWdodDogMC44Y207XHJcbiAgICBwYWRkaW5nOiAzcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDVweDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgYm94LXNoYWRvdzoxcHggMXB4ICAjMDAwMDAwO1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG5cclxufVxyXG4uYnRuLWRyb3Bkb3duOmhvdmVyXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICByZ2JhKDAsIDEwMCwgMCwgMC40MzIpO1xyXG59XHJcblxyXG4udGl0bGVfY2FyZFxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICAgIGhlaWdodDogMi41Y207XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xyXG59XHJcbi55b2phbmFfbG9nb1xyXG57XHJcbiAgICBtYXJnaW4tbGVmdDogMC41Y207XHJcbn1cclxuXHJcbmgxXHJcbntcclxuICAgIHRleHQtdHJhbnNmb3JtOiBjYXBpdGFsaXplO1xyXG59XHJcbi5jb250YWluZXJcclxue1xyXG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG4gIGNvbG9yOiBibGFjaztcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGN1cnNvcjpkZWZhdWx0O1xyXG5cclxufVxyXG5cclxuXHJcblxyXG4uY29udGFpbmVyIC5jZW50ZXJlZFxyXG57XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICB0b3A6NTAlO1xyXG4gICAgbGVmdDo1MCU7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLC01MCUpO1xyXG4gICAgdGV4dC1zaGFkb3c6IDFweCAxcHggeWVsbG93O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGRlcjtcclxuICAgIGZvbnQtc2l6ZTogbGFyZ2VyO1xyXG59XHJcbi5iZy1pbWdcclxue1xyXG4gICAgZmlsdGVyOiBibHVyKDEuNXB4KTtcclxuICAgIC13ZWJraXQtZmlsdGVyOiBibHVyKDEuNXB4KTtcclxufVxyXG4uc2hvcnRcclxue1xyXG4gICAgZm9udC1zaXplOiBzbWFsbGVyO1xyXG4gICAgZm9udC1mYW1pbHk6IGN1cnNpdmU7XHJcblxyXG4gfVxyXG4gXHJcbi5kcm9wYnRuIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBwYWRkaW5nOiAxNnB4O1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4vKiBUaGUgY29udGFpbmVyIDxkaXY+IC0gbmVlZGVkIHRvIHBvc2l0aW9uIHRoZSBkcm9wZG93biBjb250ZW50ICovXHJcbi5kcm9wZG93biB7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLyogRHJvcGRvd24gQ29udGVudCAoSGlkZGVuIGJ5IERlZmF1bHQpICovXHJcbi5kcm9wZG93bi1jb250ZW50IHtcclxuICBkaXNwbGF5OiBub25lO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmOWY5O1xyXG4gIG1pbi13aWR0aDogMTAwcHg7XHJcbiAgYm94LXNoYWRvdzogMHB4IDhweCAxNnB4IDBweCByZ2JhKDAsMCwwLDAuMik7XHJcbiAgei1pbmRleDogMTtcclxufVxyXG5cclxuLyogTGlua3MgaW5zaWRlIHRoZSBkcm9wZG93biAqL1xyXG4uZHJvcGRvd24tY29udGVudCBhIHtcclxuICBjb2xvcjpibGFjaztcclxuICBwYWRkaW5nOiAxMnB4IDE2cHg7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4vKiBDaGFuZ2UgY29sb3Igb2YgZHJvcGRvd24gbGlua3Mgb24gaG92ZXIgKi9cclxuLmRyb3Bkb3duLWNvbnRlbnQgYTpob3ZlciB7YmFja2dyb3VuZC1jb2xvcjogI2YxZjFmMTtcclxuIFxyXG59XHJcblxyXG4vKiBTaG93IHRoZSBkcm9wZG93biBtZW51IG9uIGhvdmVyICovXHJcbi5kcm9wZG93bjpob3ZlciAuZHJvcGRvd24tY29udGVudCB7XHJcbiAgXHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuXHJcbn1cclxuXHJcbi8qIENoYW5nZSB0aGUgYmFja2dyb3VuZCBjb2xvciBvZiB0aGUgZHJvcGRvd24gYnV0dG9uIHdoZW4gdGhlIGRyb3Bkb3duIGNvbnRlbnQgaXMgc2hvd24gKi9cclxuLmRyb3Bkb3duOmhvdmVyIC5kcm9wYnRuIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2U4ZTQxO1xyXG59XHJcblxyXG4iXX0= */</style><style>nav[_ngcontent-trt-c45]
+{   background-image: linear-gradient(to right,green,greenyellow);
+    border: 0.5px solid greenyellow;
+    padding:20px;
+    padding-bottom: 5px;
+}
+nav[_ngcontent-trt-c45]   ul[_ngcontent-trt-c45]   li[_ngcontent-trt-c45]
+{
+    display: inline;
+    text-align: center;
+    padding-left: 20px;
+}
+nav[_ngcontent-trt-c45]   ul[_ngcontent-trt-c45]   li[_ngcontent-trt-c45]   a[_ngcontent-trt-c45]
+{
+    text-decoration: none;
+    color: floralwhite;
+    font-weight: bolder;
+    font-size: larger;
+    text-shadow: 1px 1px black;
+}
+nav[_ngcontent-trt-c45]   ul[_ngcontent-trt-c45]   li[_ngcontent-trt-c45]   a[_ngcontent-trt-c45]:hover
+{
+    zoom: 1.3;
+    padding: 0px;
+}
+nav[_ngcontent-trt-c45]   ul[_ngcontent-trt-c45]   li[_ngcontent-trt-c45]   button[_ngcontent-trt-c45]
+{
+    
+    display: inline-block;
+    border-radius: 5px;
+    width: 2cm;
+    padding: 3px;
+}
+.btn-custom[_ngcontent-trt-c45]
+{
+    background-color: rgba(0, 100, 0, 0.87);
+    color: white;
+    font-weight:normal;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+.btn-custom[_ngcontent-trt-c45]:hover, .btn-custom[_ngcontent-trt-c45]:active
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+
+}
+.btn-dropdown[_ngcontent-trt-c45]
+{
+    width: 2.5cm;
+    height: 0.8cm;
+    padding: 3px;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: inline-block;
+    box-shadow:1px 1px  #000000;
+    text-align: center;
+
+}
+.btn-dropdown[_ngcontent-trt-c45]:hover
+{
+    background-color:  rgba(0, 100, 0, 0.432);
+}
+.title_card[_ngcontent-trt-c45]
+{
+    background-color: white;
+    height: 2.5cm;
+    width: 100%;
+    border: 1px solid black;
+}
+.yojana_logo[_ngcontent-trt-c45]
+{
+    margin-left: 0.5cm;
+}
+h1[_ngcontent-trt-c45]
+{
+    text-transform: capitalize;
+}
+.container[_ngcontent-trt-c45]
+{
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: large;
+  position: relative;
+  cursor:default;
+
+}
+.container[_ngcontent-trt-c45]   .centered[_ngcontent-trt-c45]
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 1px 1px yellow;
+    font-weight: bolder;
+    font-size: larger;
+}
+.bg-img[_ngcontent-trt-c45]
+{
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
+}
+.short[_ngcontent-trt-c45]
+{
+    font-size: smaller;
+    font-family: cursive;
+
+ }
+
+.dropbtn[_ngcontent-trt-c45] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown[_ngcontent-trt-c45] {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content[_ngcontent-trt-c45] {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content[_ngcontent-trt-c45]   a[_ngcontent-trt-c45] {
+  color:black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content[_ngcontent-trt-c45]   a[_ngcontent-trt-c45]:hover {background-color: #f1f1f1;
+ 
+}
+
+.dropdown[_ngcontent-trt-c45]:hover   .dropdown-content[_ngcontent-trt-c45] {
+  
+    display: block;
+
+}
+
+.dropdown[_ngcontent-trt-c45]:hover   .dropbtn[_ngcontent-trt-c45] {
+  background-color: #3e8e41;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5hdi1iYXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDZEQUE2RDtJQUM3RCwrQkFBK0I7SUFDL0IsWUFBWTtJQUNaLG1CQUFtQjtBQUN2QjtBQUNBOztJQUVJLGVBQWU7SUFDZixrQkFBa0I7SUFDbEIsa0JBQWtCO0FBQ3RCO0FBQ0E7O0lBRUkscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsaUJBQWlCO0lBQ2pCLDBCQUEwQjtBQUM5QjtBQUVBOztJQUVJLFNBQVM7SUFDVCxZQUFZO0FBQ2hCO0FBQ0E7OztJQUdJLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsVUFBVTtJQUNWLFlBQVk7QUFDaEI7QUFDQTs7SUFFSSx1Q0FBdUM7SUFDdkMsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQix5Q0FBeUM7O0FBRTdDO0FBRUE7O0lBRUkseUNBQXlDOztBQUU3QztBQUVBOztJQUVJLFlBQVk7SUFDWixhQUFhO0lBQ2IsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixrQkFBa0I7SUFDbEIsdUJBQXVCO0lBQ3ZCLHFCQUFxQjtJQUNyQiwyQkFBMkI7SUFDM0Isa0JBQWtCOztBQUV0QjtBQUNBOztJQUVJLHlDQUF5QztBQUM3QztBQUVBOztJQUVJLHVCQUF1QjtJQUN2QixhQUFhO0lBQ2IsV0FBVztJQUNYLHVCQUF1QjtBQUMzQjtBQUNBOztJQUVJLGtCQUFrQjtBQUN0QjtBQUVBOztJQUVJLDBCQUEwQjtBQUM5QjtBQUNBOztFQUVFLHVCQUF1QjtFQUN2QixZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixjQUFjOztBQUVoQjtBQUlBOztJQUVJLGtCQUFrQjtJQUNsQixPQUFPO0lBQ1AsUUFBUTtJQUNSLCtCQUErQjtJQUMvQiwyQkFBMkI7SUFDM0IsbUJBQW1CO0lBQ25CLGlCQUFpQjtBQUNyQjtBQUNBOztJQUVJLG1CQUFtQjtJQUNuQiwyQkFBMkI7QUFDL0I7QUFDQTs7SUFFSSxrQkFBa0I7SUFDbEIsb0JBQW9COztDQUV2QjtBQUNBOzs7Ozs7Ozs7Ozs7OztHQWNFO0FBUUg7RUFDRSx5QkFBeUI7RUFDekIsWUFBWTtFQUNaLGFBQWE7RUFDYixlQUFlO0VBQ2YsWUFBWTtFQUNaLGVBQWU7QUFDakI7QUFFQSxrRUFBa0U7QUFDbEU7RUFDRSxrQkFBa0I7RUFDbEIscUJBQXFCO0FBQ3ZCO0FBRUEseUNBQXlDO0FBQ3pDO0VBQ0UsYUFBYTtFQUNiLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsZ0JBQWdCO0VBQ2hCLDRDQUE0QztFQUM1QyxVQUFVO0FBQ1o7QUFFQSw4QkFBOEI7QUFDOUI7RUFDRSxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLHFCQUFxQjtFQUNyQixjQUFjO0FBQ2hCO0FBRUEsNENBQTRDO0FBQzVDLDJCQUEyQix5QkFBeUI7O0FBRXBEO0FBRUEsb0NBQW9DO0FBQ3BDOztJQUVJLGNBQWM7O0FBRWxCO0FBRUEsMEZBQTBGO0FBQzFGO0VBQ0UseUJBQXlCO0FBQzNCIiwiZmlsZSI6Im5hdi1iYXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm5hdlxyXG57ICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KHRvIHJpZ2h0LGdyZWVuLGdyZWVueWVsbG93KTtcclxuICAgIGJvcmRlcjogMC41cHggc29saWQgZ3JlZW55ZWxsb3c7XHJcbiAgICBwYWRkaW5nOjIwcHg7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogNXB4O1xyXG59XHJcbm5hdiB1bCBsaVxyXG57XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbn1cclxubmF2IHVsIGxpIGFcclxue1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gICAgY29sb3I6IGZsb3JhbHdoaXRlO1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGRlcjtcclxuICAgIGZvbnQtc2l6ZTogbGFyZ2VyO1xyXG4gICAgdGV4dC1zaGFkb3c6IDFweCAxcHggYmxhY2s7XHJcbn1cclxuXHJcbm5hdiB1bCBsaSBhOmhvdmVyXHJcbntcclxuICAgIHpvb206IDEuMztcclxuICAgIHBhZGRpbmc6IDBweDtcclxufVxyXG5uYXYgdWwgbGkgYnV0dG9uXHJcbntcclxuICAgIFxyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgd2lkdGg6IDJjbTtcclxuICAgIHBhZGRpbmc6IDNweDtcclxufVxyXG4uYnRuLWN1c3RvbVxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsIDEwMCwgMCwgMC44Nyk7XHJcbiAgICBjb2xvcjogd2hpdGU7XHJcbiAgICBmb250LXdlaWdodDpub3JtYWw7XHJcbiAgICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcclxuICBcclxufVxyXG5cclxuLmJ0bi1jdXN0b206aG92ZXIsLmJ0bi1jdXN0b206YWN0aXZlXHJcbntcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICByZ2JhKDAsIDEwMCwgMCwgMC40MzIpO1xyXG5cclxufVxyXG5cclxuLmJ0bi1kcm9wZG93blxyXG57XHJcbiAgICB3aWR0aDogMi41Y207XHJcbiAgICBoZWlnaHQ6IDAuOGNtO1xyXG4gICAgcGFkZGluZzogM3B4O1xyXG4gICAgcGFkZGluZy1sZWZ0OiA1cHg7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIGJveC1zaGFkb3c6MXB4IDFweCAgIzAwMDAwMDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbn1cclxuLmJ0bi1kcm9wZG93bjpob3ZlclxyXG57XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAgcmdiYSgwLCAxMDAsIDAsIDAuNDMyKTtcclxufVxyXG5cclxuLnRpdGxlX2NhcmRcclxue1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICBoZWlnaHQ6IDIuNWNtO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxufVxyXG4ueW9qYW5hX2xvZ29cclxue1xyXG4gICAgbWFyZ2luLWxlZnQ6IDAuNWNtO1xyXG59XHJcblxyXG5oMVxyXG57XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogY2FwaXRhbGl6ZTtcclxufVxyXG4uY29udGFpbmVyXHJcbntcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcclxuICBjb2xvcjogYmxhY2s7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICBmb250LXNpemU6IGxhcmdlO1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBjdXJzb3I6ZGVmYXVsdDtcclxuXHJcbn1cclxuXHJcblxyXG5cclxuLmNvbnRhaW5lciAuY2VudGVyZWRcclxue1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOjUwJTtcclxuICAgIGxlZnQ6NTAlO1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwtNTAlKTtcclxuICAgIHRleHQtc2hhZG93OiAxcHggMXB4IHllbGxvdztcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkZXI7XHJcbiAgICBmb250LXNpemU6IGxhcmdlcjtcclxufVxyXG4uYmctaW1nXHJcbntcclxuICAgIGZpbHRlcjogYmx1cigxLjVweCk7XHJcbiAgICAtd2Via2l0LWZpbHRlcjogYmx1cigxLjVweCk7XHJcbn1cclxuLnNob3J0XHJcbntcclxuICAgIGZvbnQtc2l6ZTogc21hbGxlcjtcclxuICAgIGZvbnQtZmFtaWx5OiBjdXJzaXZlO1xyXG5cclxuIH1cclxuIC8qXHJcbi5kcm9wZG93bntcclxuICAgIGJvcmRlcjoxcHggc29saWQgYmxhY2s7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiNmMGYwZjA7XHJcbiAgICBjb2xvcjpibHVlO1xyXG4gICAgaGVpZ2h0OiAwLjhjbTtcclxuXHJcbn1cclxuLmRyb3Bkb3duOmhvdmVye1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XHJcbiAgICB0ZXh0LXNoYWRvdzogMXB4IDFweCB5ZWxsb3c7XHJcbiAgXHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuXHJcbn0gKi9cclxuXHJcblxyXG5cclxuXHJcblxyXG5cclxuXHJcbi5kcm9wYnRuIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNENBRjUwO1xyXG4gIGNvbG9yOiB3aGl0ZTtcclxuICBwYWRkaW5nOiAxNnB4O1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBib3JkZXI6IG5vbmU7XHJcbiAgY3Vyc29yOiBwb2ludGVyO1xyXG59XHJcblxyXG4vKiBUaGUgY29udGFpbmVyIDxkaXY+IC0gbmVlZGVkIHRvIHBvc2l0aW9uIHRoZSBkcm9wZG93biBjb250ZW50ICovXHJcbi5kcm9wZG93biB7XHJcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLyogRHJvcGRvd24gQ29udGVudCAoSGlkZGVuIGJ5IERlZmF1bHQpICovXHJcbi5kcm9wZG93bi1jb250ZW50IHtcclxuICBkaXNwbGF5OiBub25lO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjlmOWY5O1xyXG4gIG1pbi13aWR0aDogMTAwcHg7XHJcbiAgYm94LXNoYWRvdzogMHB4IDhweCAxNnB4IDBweCByZ2JhKDAsMCwwLDAuMik7XHJcbiAgei1pbmRleDogMTtcclxufVxyXG5cclxuLyogTGlua3MgaW5zaWRlIHRoZSBkcm9wZG93biAqL1xyXG4uZHJvcGRvd24tY29udGVudCBhIHtcclxuICBjb2xvcjpibGFjaztcclxuICBwYWRkaW5nOiAxMnB4IDE2cHg7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG59XHJcblxyXG4vKiBDaGFuZ2UgY29sb3Igb2YgZHJvcGRvd24gbGlua3Mgb24gaG92ZXIgKi9cclxuLmRyb3Bkb3duLWNvbnRlbnQgYTpob3ZlciB7YmFja2dyb3VuZC1jb2xvcjogI2YxZjFmMTtcclxuIFxyXG59XHJcblxyXG4vKiBTaG93IHRoZSBkcm9wZG93biBtZW51IG9uIGhvdmVyICovXHJcbi5kcm9wZG93bjpob3ZlciAuZHJvcGRvd24tY29udGVudCB7XHJcbiAgXHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuXHJcbn1cclxuXHJcbi8qIENoYW5nZSB0aGUgYmFja2dyb3VuZCBjb2xvciBvZiB0aGUgZHJvcGRvd24gYnV0dG9uIHdoZW4gdGhlIGRyb3Bkb3duIGNvbnRlbnQgaXMgc2hvd24gKi9cclxuLmRyb3Bkb3duOmhvdmVyIC5kcm9wYnRuIHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2U4ZTQxO1xyXG59XHJcblxyXG4iXX0= */</style><script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script><style>table[_ngcontent-trt-c49]
+{
+    width: 60%;
+}
+.FormTitle[_ngcontent-trt-c49]
+{
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+.entire[_ngcontent-trt-c49]
+{
+    position:absolute;
+    top:0;bottom:-1;left:0;right:0;
+    background-color: white;
+}
+.FormTable[_ngcontent-trt-c49], .FormTable[_ngcontent-trt-c49]   tr[_ngcontent-trt-c49]   td[_ngcontent-trt-c49]
+{
+    margin:auto;
+}
+.FormTable[_ngcontent-trt-c49]
+{
+border-spacing: 0px 0.4cm;
+}
+.alert-danger[_ngcontent-trt-c49]
+{   text-align: center;
+    font-size: small;
+}
+.redbox[_ngcontent-trt-c49]
+{
+    border: 2px solid red;
+}
+tr[_ngcontent-trt-c49]
+{
+    height: 0.5cm;
+}
+.btn[_ngcontent-trt-c49]
+{
+    border-radius: 5px;
+    height: 1cm;
+    padding: 0;
+    padding-left: 15px;padding-right: 15px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZhcm1lci1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7SUFFSSxVQUFVO0FBQ2Q7QUFDQTs7SUFFSSxrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLHlDQUF5QztJQUN6QyxnQkFBZ0I7QUFDcEI7QUFDQTs7SUFFSSxpQkFBaUI7SUFDakIsS0FBSyxDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsT0FBTztJQUM5Qix1QkFBdUI7QUFDM0I7QUFDQTs7SUFFSSxXQUFXO0FBQ2Y7QUFDQTs7QUFFQSx5QkFBeUI7QUFDekI7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7QUFDcEI7QUFDQTs7SUFFSSxxQkFBcUI7QUFDekI7QUFDQTs7SUFFSSxhQUFhO0FBQ2pCO0FBRUE7O0lBRUksa0JBQWtCO0lBQ2xCLFdBQVc7SUFDWCxVQUFVO0lBQ1Ysa0JBQWtCLENBQUMsbUJBQW1CO0FBQzFDIiwiZmlsZSI6ImZhcm1lci1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlXHJcbntcclxuICAgIHdpZHRoOiA2MCU7XHJcbn1cclxuLkZvcm1UaXRsZVxyXG57XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBmb250LWZhbWlseTogQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZjtcclxuICAgIGZvbnQtc2l6ZTogbGFyZ2U7XHJcbn1cclxuLmVudGlyZVxyXG57XHJcbiAgICBwb3NpdGlvbjphYnNvbHV0ZTtcclxuICAgIHRvcDowO2JvdHRvbTotMTtsZWZ0OjA7cmlnaHQ6MDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xyXG59XHJcbi5Gb3JtVGFibGUsIC5Gb3JtVGFibGUgdHIgdGRcclxue1xyXG4gICAgbWFyZ2luOmF1dG87XHJcbn1cclxuLkZvcm1UYWJsZVxyXG57XHJcbmJvcmRlci1zcGFjaW5nOiAwcHggMC40Y207XHJcbn1cclxuLmFsZXJ0LWRhbmdlclxyXG57ICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC1zaXplOiBzbWFsbDtcclxufVxyXG4ucmVkYm94XHJcbntcclxuICAgIGJvcmRlcjogMnB4IHNvbGlkIHJlZDtcclxufVxyXG50clxyXG57XHJcbiAgICBoZWlnaHQ6IDAuNWNtO1xyXG59XHJcblxyXG4uYnRuXHJcbntcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIGhlaWdodDogMWNtO1xyXG4gICAgcGFkZGluZzogMDtcclxuICAgIHBhZGRpbmctbGVmdDogMTVweDtwYWRkaW5nLXJpZ2h0OiAxNXB4O1xyXG59XHJcblxyXG4iXX0= */</style></head>
+<body class="body">
+  <app-root _nghost-trt-c64="" ng-version="11.0.6"><router-outlet _ngcontent-trt-c64=""></router-outlet><farmer-registration _nghost-trt-c49=""><div _ngcontent-trt-c49="" class="entire"><div _ngcontent-trt-c49="" class="FormTitle" style="background: thistle;">Farmer Registration</div><form _ngcontent-trt-c49="" novalidate="" ngform="" name="f" class="form-group ng-pristine ng-invalid ng-touched"><table _ngcontent-trt-c49="" class="FormTable"><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49="" colspan="2" class="FormTitle">Personal Details</td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="UserName">Full Name</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="UserName" type="text" id="UserName" autofocus="" autocomplete="username" required="" minlength="3" maxlength="20" class="form-control ng-pristine ng-invalid ng-touched" ng-reflect-model="" ng-reflect-name="UserName" ng-reflect-required="" ng-reflect-minlength="3" ng-reflect-maxlength="20"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Name Field is required and length must be between 3 and 20 </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="MobileNumber">Contact No.</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="MobileNumber" type="text" id="MobileNumber" pattern="[6789][0-9]{9}" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="MobileNumber" ng-reflect-required="" ng-reflect-pattern="[6789][0-9]{9}"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Mobile Number is required and must be 10 digits </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="Email">E-mail id</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="Email" type="email" id="Email" pattern="[0-9a-zA-Z_.]{1,20}@[a-z.]{2,10}" required="" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="Email" ng-reflect-required="" ng-reflect-pattern="[0-9a-zA-Z_.]{1,20}@[a-z.]{2,1"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Email is required. Format: email_id@website.com </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49="" colspan="2" class="FormTitle"> Address Details </td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="Address">Residential Address</label></td><td _ngcontent-trt-c49=""><textarea _ngcontent-trt-c49="" ngmodel="" name="Address" id="Address" rows="5" cols="50" required="" maxlength="100" class="form-control ng-pristine ng-invalid ng-touched" ng-reflect-model="" ng-reflect-name="Address" ng-reflect-required="" ng-reflect-maxlength="100"></textarea></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Address is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="City">City, State Code</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="City" id="City" type="text" pattern="[a-zA-Z]*,[a-zA-Z\s]*" required="" maxlength="20" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="City" ng-reflect-required="" ng-reflect-maxlength="20" ng-reflect-pattern="[a-zA-Z]*,[a-zA-Z\s]*"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> City &amp; State are required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="Pincode">Pincode</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="Pincode" id="Pincode" type="text" required="" pattern="[1-9][0-9]{5}" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="Pincode" ng-reflect-required="" ng-reflect-pattern="[1-9][0-9]{5}"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Pincode is required and must be six digits </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49="" colspan="2" class="FormTitle">Farm Land Details</td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="LandCity">Area of Land (in hectare)</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="LandCity" type="text" id="LandCity" required="" pattern="[0-9]{1,10}" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="LandCity" ng-reflect-required="" ng-reflect-pattern="[0-9]{1,10}"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Area of land is required and must be a number </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="LandAddress">Land Address</label></td><td _ngcontent-trt-c49=""><textarea _ngcontent-trt-c49="" ngmodel="" name="LandAddress" cols="50" rows="5" id="LandAddress" required="" maxlength="100" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="LandAddress" ng-reflect-required="" ng-reflect-maxlength="100"></textarea></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> LandAddress is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="LandPinCode">Land Pincode</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="LandPinCode" type="text" id="LandPinCode" required="" pattern="[1-9][0-9]{5}" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="LandPinCode" ng-reflect-required="" ng-reflect-pattern="[1-9][0-9]{5}"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> LandPinCode is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49="" colspan="2" class="FormTitle"> Bank Details </td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="BankAccountNumber">Account Number</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="BankAccountNumber" id="BankAccountNumber" type="text" required="" pattern="[0-9]{1,20}" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="BankAccountNumber" ng-reflect-required="" ng-reflect-pattern="[0-9]{1,20}"><input _ngcontent-trt-c49="" ngmodel="" name="BankAccountNumber2" type="text" hidden="" ng-reflect-name="BankAccountNumber2" class="ng-untouched ng-pristine ng-valid"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Account Number is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="IFSC_Code">IFSC Code</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="IFSC_Code" id="IFSC_Code" type="text" required="" maxlength="20" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="IFSC_Code" ng-reflect-required="" ng-reflect-maxlength="20"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> IFSC Code is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49="" colspan="2" class="FormTitle">Document Upload</td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="AadharNumber">Aadhaar Number</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="AadharNumber" id="AadharNumber" type="text" required="" pattern="[0-9]{12}" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-name="AadharNumber" ng-reflect-required="" ng-reflect-pattern="[0-9]{12}"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Aadhaar Number is required and must be 12 digits </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="Aadhaar">Upload Aadhaar</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="Aadhaar" id="Aadhaar" type="file" required="" class="form-control-file ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="Aadhaar" ng-reflect-required=""></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Aadhaar is required and must be in .pdf format </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="PanNo">PAN Number</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="PanNo" required="" pattern="[A-Z]{5}[0-9]{4}[A-Z]" id="PanNo" type="text" autocomplete="off" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="PanNo" ng-reflect-required="" ng-reflect-pattern="[A-Z]{5}[0-9]{4}[A-Z]"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> PAN Number is required </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="PAN">Upload PAN</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="PAN" id="PAN" type="file" required="" class="form-control-file ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="PAN" ng-reflect-required=""></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> PAN is required and must be in .pdf format </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="TraderLicense">Trader License</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="TraderLicense" id="TraderLicense" type="file" required="" class="form-control-file ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="TraderLicense" ng-reflect-required=""></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> TraderLicense is required and must be in .pdf format </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="Password">Password</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="Password" id="Password" type="password" autocomplete="new-password" required="" minlength="5" maxlength="20" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="Password" ng-reflect-required="" ng-reflect-minlength="5" ng-reflect-maxlength="20"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Password is required and length must be 5 to 20 </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><label _ngcontent-trt-c49="" for="RetypePassword">Confirm Password</label></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" ngmodel="" name="RetypePassword" type="password" id="RetypePassword" autocomplete="new-password" required="" minlength="5" maxlength="20" class="form-control ng-untouched ng-pristine ng-invalid" ng-reflect-model="" ng-reflect-name="RetypePassword" ng-reflect-required="" ng-reflect-minlength="5" ng-reflect-maxlength="20"></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""></td><td _ngcontent-trt-c49=""><span _ngcontent-trt-c49="" class="alert alert-danger" hidden=""> Passwords Do not match </span></td></tr><tr _ngcontent-trt-c49=""><td _ngcontent-trt-c49=""><button _ngcontent-trt-c49="" type="button" class="btn btn-success">Back</button></td><td _ngcontent-trt-c49=""><button _ngcontent-trt-c49="" type="reset" class="btn btn-danger">Clear</button></td><td _ngcontent-trt-c49=""><input _ngcontent-trt-c49="" type="submit" value="Submit" class="btn btn-info" disabled=""></td></tr></table></form><br _ngcontent-trt-c49=""><br _ngcontent-trt-c49=""></div></farmer-registration><!--container--><footer _ngcontent-trt-c64="" style="background-color: rgba(70, 131, 180, 0.685);">Copyright Team 16 © 2021</footer></app-root>  
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="./FarmerSchemeView_files/firebase-app.js.download"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="./FarmerSchemeView_files/firebase-analytics.js.download"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCxbc5pYH0icsnM-CjqcL907YtuIWo3AvQ",
+    authDomain: "smartagri-ecaef.firebaseapp.com",
+    projectId: "smartagri-ecaef",
+    storageBucket: "smartagri-ecaef.appspot.com",
+    messagingSenderId: "49082984249",
+    appId: "1:49082984249:web:3c98a5faa21db29ef3eae8",
+    measurementId: "G-WYFPZX4P93"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="./FarmerSchemeView_files/runtime.js.download" defer=""></script><script src="./FarmerSchemeView_files/polyfills.js.download" defer=""></script><script src="./FarmerSchemeView_files/styles.js.download" defer=""></script><script src="./FarmerSchemeView_files/vendor.js.download" defer=""></script><script src="./FarmerSchemeView_files/main.js.download" defer=""></script>
+
+</body></html>
