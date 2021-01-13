@@ -106,7 +106,9 @@ export class SQLServerService
         console.log(val)
         console.log(JSON.stringify(val))
         this.http.post<IUserTables>(this.root_url+this.users_controller_urls[2]+'PostUserTable',val,this.httpOptions)
-        .subscribe(resp=>{console.log(JSON.stringify(resp))}
+        .subscribe(data=>{
+alert("Registration Complete")
+        },resp=>{console.log(JSON.stringify(resp))}
         );
     }
 

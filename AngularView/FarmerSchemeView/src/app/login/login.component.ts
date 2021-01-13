@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   {
     let login=this.service.Login(this.UT);
     
-    login.subscribe(data=>{this.LoginResp=data; console.log(this.LoginResp);
+    login.subscribe(data=>{this.LoginResp=data; 
       if((this.LoginResp as any).length==1)
     {
       this.service.SetUser(this.LoginResp);
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
   log(x)
   {
-    console.log(x);
+   
   }
 
   constructor(private service:SQLServerService,private router:Router) { }

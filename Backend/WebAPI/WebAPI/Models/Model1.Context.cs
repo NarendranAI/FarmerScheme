@@ -13,10 +13,10 @@ namespace WebAPI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Farmer_SchemeEntities1 : DbContext
+    public partial class Farmer_SchemeEntities2 : DbContext
     {
-        public Farmer_SchemeEntities1()
-            : base("name=Farmer_SchemeEntities1")
+        public Farmer_SchemeEntities2()
+            : base("name=Farmer_SchemeEntities2")
         {
         }
     

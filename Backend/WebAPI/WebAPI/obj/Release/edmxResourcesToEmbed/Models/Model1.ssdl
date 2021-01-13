@@ -18,19 +18,18 @@
   </EntityType>
   <EntityType Name="exchange">
     <Key>
-      <PropertyRef Name="StockId" />
-      <PropertyRef Name="UserId" />
+      <PropertyRef Name="bid" />
     </Key>
     <Property Name="StockId" Type="int" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="bid" Type="int" />
+    <Property Name="bid" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="history">
     <Key>
       <PropertyRef Name="transid" />
     </Key>
     <Property Name="transid" Type="int" Nullable="false" />
-    <Property Name="date" Type="date" />
+    <Property Name="date" Type="datetime" />
     <Property Name="time" Type="time" Precision="7" />
     <Property Name="UserID" Type="int" />
     <Property Name="StockId" Type="int" />

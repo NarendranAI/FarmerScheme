@@ -13,7 +13,6 @@
             <th>Fertilizer and PH</th>
             <th>Quantity</th>
             <th>Price</th>
-            <th>Cart</th>
         </thead>
         <tbody *ngFor="let x of stocks">
             <tr *ngIf="(x.histories[0].status==='Approved')&&(x.histories[0].UserTable.TypeCode==='F')">  
@@ -23,7 +22,6 @@
             <td>{{x.Fertilizer}}</td>
             <td>{{x.Quantity}}</td>
             <td>{{x.Selling_Price}}</td>
-            <td>{{x.histories[0].status}}</td>
             
             </tr>
         </tbody>

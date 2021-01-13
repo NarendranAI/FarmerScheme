@@ -58,7 +58,7 @@ export class AdminScreenComponent implements OnInit {
     }
     if(x.comment==="Buy")
     {
-      this.service.GetExchangeById(x.UserID).subscribe(
+      this.service.GetExchangeById(x.transid).subscribe(
         data=>
         {
           this.ex=data;

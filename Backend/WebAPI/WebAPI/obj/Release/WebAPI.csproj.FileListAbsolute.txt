@@ -72,3 +72,7 @@ F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\obj\Release\WebAPI.csproj.CoreCompileI
 F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\obj\Release\WebAPI.csproj.CopyComplete
 F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\obj\Release\WebAPI.dll
 F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\obj\Release\WebAPI.pdb
+F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\bin\Microsoft.AspNet.Identity.Core.dll
+F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+F:\LTI\FarmerScheme\Backend\WebAPI\WebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml

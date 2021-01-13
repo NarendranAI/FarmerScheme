@@ -16,7 +16,7 @@ namespace WebAPI.Controllers.STOCKS
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class exchangesController : ApiController
     {
-        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
+        private Farmer_SchemeEntities2 db = new Farmer_SchemeEntities2();
 
         // GET: api/exchanges
         public IQueryable<exchange> Getexchanges()
@@ -28,7 +28,7 @@ namespace WebAPI.Controllers.STOCKS
         [ResponseType(typeof(exchange))]
         public IHttpActionResult Getexchange(int id)
         {
-            exchange exchange = db.exchanges.Where(r => r.UserId == id).FirstOrDefault<exchange>();
+            exchange exchange = db.exchanges.Where(r => r.bid == id).FirstOrDefault<exchange>();
             if (exchange == null)
             {
                 return NotFound();

@@ -34,12 +34,12 @@ export class FarmerRegistrationComponent implements OnInit {
   }
 
   public Log(x)
-  {console.log(x); }
+  { }
 
   PostFarmerReg(x)
   {
     this.BT.BankAccountNumber=this.UT.BankAccountNumber;
-    this.service.postUserTable(this.UT);
+    this.service.postUserTable(this.UT)
     //this.service.postUserBankDetails(this.BT);
     this.GoHome();
   }
@@ -48,7 +48,7 @@ export class FarmerRegistrationComponent implements OnInit {
   ngOnInit(): void {
     let x = this.service.getAllUserTable().subscribe(
       data=>{
-        this.UT.UserID=data.length+1; console.log(data.length+1);
+        this.UT.UserID=data.length+1; 
       }
     );  
 

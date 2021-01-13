@@ -24,9 +24,9 @@ namespace WebAPI.Controllers.USERS
             public string type { get; set; }
         }
 
-        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
+        private Farmer_SchemeEntities2 db = new Farmer_SchemeEntities2();
 
-        // GET: api/UserTables
+        // GET: api/UserTables/GetUserTables
         public IQueryable<UserTable> GetUserTables()
         {
             return db.UserTables;

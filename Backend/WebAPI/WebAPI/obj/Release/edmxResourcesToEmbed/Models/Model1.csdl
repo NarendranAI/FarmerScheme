@@ -22,12 +22,11 @@
   </EntityType>
   <EntityType Name="exchange">
     <Key>
-      <PropertyRef Name="StockId" />
-      <PropertyRef Name="UserId" />
+      <PropertyRef Name="bid" />
     </Key>
     <Property Name="StockId" Type="Int32" Nullable="false" />
     <Property Name="UserId" Type="Int32" Nullable="false" />
-    <Property Name="bid" Type="Int32" />
+    <Property Name="bid" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Stock" Relationship="Self.FK__exchange__StockI__55009F39" FromRole="exchange" ToRole="Stock" />
     <NavigationProperty Name="UserTable" Relationship="Self.FK__exchange__UserId__55F4C372" FromRole="exchange" ToRole="UserTable" />
   </EntityType>
@@ -36,7 +35,7 @@
       <PropertyRef Name="transid" />
     </Key>
     <Property Name="transid" Type="Int32" Nullable="false" />
-    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="date" Type="DateTime" Precision="3" />
     <Property Name="time" Type="Time" Precision="7" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="StockId" Type="Int32" />
@@ -324,7 +323,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Farmer_SchemeEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Farmer_SchemeEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="crops" EntityType="Self.crop" />
     <EntitySet Name="crop_insurance" EntityType="Self.crop_insurance" />
     <EntitySet Name="exchanges" EntityType="Self.exchange" />

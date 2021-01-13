@@ -16,7 +16,7 @@ namespace WebAPI.Controllers.INSURANCE
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class InsuranceClaimsController : ApiController
     {
-        private Farmer_SchemeEntities1 db = new Farmer_SchemeEntities1();
+        private Farmer_SchemeEntities2 db = new Farmer_SchemeEntities2();
         
 
         // GET: api/InsuranceClaims/GetInsuranceClaims

@@ -16,7 +16,7 @@ namespace WebAPI.Models
     {
         public int StockId { get; set; }
         public int UserId { get; set; }
-        public Nullable<int> bid { get; set; }
+        public int bid { get; set; }
     
         public virtual Stock Stock { get; set; }
         public virtual UserTable UserTable { get; set; }

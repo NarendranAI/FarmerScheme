@@ -57,6 +57,7 @@ export class BuyCropComponent implements OnInit {
   {
     this.ex.StockId=this.stock.StockId;
     this.ex.UserId=this.UID;
+    this.ex.bid=this.hist.transid;
     this.stock.StockId=this.SID;
     this.stock.UserID=this.UID;
     this.hist.UserID=this.UID;
